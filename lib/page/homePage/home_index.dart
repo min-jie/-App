@@ -84,6 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ];
 
     return Scaffold(
+      backgroundColor: Color.fromRGBO(209, 235, 205, 1),
       appBar: AppBar(
         iconTheme: IconThemeData(color: Color.fromRGBO(56, 129, 47, 1)),
         backgroundColor: Colors.white,
@@ -245,41 +246,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
 
-      // body: (
-      //   StaggeredGrid.count(
-      //     crossAxisCount: 4,
-      //     mainAxisSpacing: 4,
-      //     crossAxisSpacing: 4,
-      //     children: const [
-      //       StaggeredGridTile.count(
-      //         crossAxisCellCount: 2,
-      //         mainAxisCellCount: 2,
-      //         child: Tile(index: 0),// your custom Tile widget here
-      //       ),
-      //       StaggeredGridTile.count(
-      //         crossAxisCellCount: 2,
-      //         mainAxisCellCount: 1,
-      //         child: Tile(index: 1),
-      //       ),
-      //       StaggeredGridTile.count(
-      //         crossAxisCellCount: 1,
-      //         mainAxisCellCount: 1,
-      //         child: Tile(index: 2),
-      //       ),
-      //       StaggeredGridTile.count(
-      //         crossAxisCellCount: 1,
-      //         mainAxisCellCount: 1,
-      //         child: Tile(index: 3),
-      //       ),
-      //       StaggeredGridTile.count(
-      //         crossAxisCellCount: 4,
-      //         mainAxisCellCount: 2,
-      //         child: Tile(index: 4),
-      //       ),
-      //     ],
-      //   );
-
-      // ),
+      
 
       body: GridView.count(
         primary: false,
@@ -293,10 +260,10 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 60,
             width: 290,
             decoration: BoxDecoration(
-              border: Border.all(
-                color: Color(0xFF9EC33B),
-              ),
-              borderRadius: BorderRadius.circular(5.0),
+              // border: Border.all(
+              //   color: Color(0xFF9EC33B),
+              // ),
+              borderRadius: BorderRadius.circular(10.0),
               color: Colors.white,
             ),
             child: Row(
@@ -325,10 +292,10 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 60,
             width: 290,
             decoration: BoxDecoration(
-              border: Border.all(
-                color: Color(0xFF9EC33B),
-              ),
-              borderRadius: BorderRadius.circular(5.0),
+              // border: Border.all(
+              //   color: Color(0xFF9EC33B),
+              // ),
+              borderRadius: BorderRadius.circular(10.0),
               color: Colors.white,
             ),
             child: Row(
@@ -357,10 +324,10 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 60,
             width: 290,
             decoration: BoxDecoration(
-              border: Border.all(
-                color: Color(0xFF9EC33B),
-              ),
-              borderRadius: BorderRadius.circular(5.0),
+              // border: Border.all(
+              //   color: Color(0xFF9EC33B),
+              // ),
+              borderRadius: BorderRadius.circular(10.0),
               color: Colors.white,
             ),
             child: Row(
@@ -389,10 +356,10 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 60,
             width: 290,
             decoration: BoxDecoration(
-              border: Border.all(
-                color: Color(0xFF9EC33B),
-              ),
-              borderRadius: BorderRadius.circular(5.0),
+              // border: Border.all(
+              //   color: Color(0xFF9EC33B),
+              // ),
+              borderRadius: BorderRadius.circular(10.0),
               color: Colors.white,
             ),
             child: Row(
@@ -421,10 +388,10 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 60,
             width: 290,
             decoration: BoxDecoration(
-              border: Border.all(
-                color: Color(0xFF9EC33B),
-              ),
-              borderRadius: BorderRadius.circular(5.0),
+              // border: Border.all(
+              //   color: Color(0xFF9EC33B),
+              // ),
+              borderRadius: BorderRadius.circular(10.0),
               color: Colors.white,
             ),
             child: Row(
@@ -453,10 +420,10 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 60,
             width: 290,
             decoration: BoxDecoration(
-              border: Border.all(
-                color: Color(0xFF9EC33B),
-              ),
-              borderRadius: BorderRadius.circular(5.0),
+              // border: Border.all(
+              //   color: Color(0xFF9EC33B),
+              // ),
+              borderRadius: BorderRadius.circular(10.0),
               color: Colors.white,
             ),
             child: Row(
