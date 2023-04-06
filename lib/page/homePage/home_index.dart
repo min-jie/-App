@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/my_flutter_app_icons.dart';
 import 'package:flutter_application/page/homePage/reserve.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -25,6 +26,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
   int tappedIndex = 0;
+  int crossAxisCellCount = 4;
+  int mainAxisCellCount = 4;
 
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
@@ -241,6 +244,43 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
+
+      // body: (
+      //   StaggeredGrid.count(
+      //     crossAxisCount: 4,
+      //     mainAxisSpacing: 4,
+      //     crossAxisSpacing: 4,
+      //     children: const [
+      //       StaggeredGridTile.count(
+      //         crossAxisCellCount: 2,
+      //         mainAxisCellCount: 2,
+      //         child: Tile(index: 0),// your custom Tile widget here
+      //       ),
+      //       StaggeredGridTile.count(
+      //         crossAxisCellCount: 2,
+      //         mainAxisCellCount: 1,
+      //         child: Tile(index: 1),
+      //       ),
+      //       StaggeredGridTile.count(
+      //         crossAxisCellCount: 1,
+      //         mainAxisCellCount: 1,
+      //         child: Tile(index: 2),
+      //       ),
+      //       StaggeredGridTile.count(
+      //         crossAxisCellCount: 1,
+      //         mainAxisCellCount: 1,
+      //         child: Tile(index: 3),
+      //       ),
+      //       StaggeredGridTile.count(
+      //         crossAxisCellCount: 4,
+      //         mainAxisCellCount: 2,
+      //         child: Tile(index: 4),
+      //       ),
+      //     ],
+      //   );
+
+      // ),
+
       body: GridView.count(
         primary: false,
         padding: const EdgeInsets.all(20),
@@ -249,7 +289,7 @@ class _MyHomePageState extends State<MyHomePage> {
         crossAxisCount: 2,
         children: <Widget>[
           Container(
-            padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+            padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
             height: 60,
             width: 290,
             decoration: BoxDecoration(
@@ -267,7 +307,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   size: 35.0,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 10),
+                  padding: EdgeInsets.only(left: 8),
                   child: Text(
                     '網路預約\n/ 掛號',
                     style: TextStyle(
@@ -281,7 +321,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           Container(
-            padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+            padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
             height: 60,
             width: 290,
             decoration: BoxDecoration(
@@ -299,8 +339,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   size: 35.0,
                 ),
                 Padding(
-                  //左边添加8像素补白
-                  padding: EdgeInsets.only(left: 10),
+                  padding: EdgeInsets.only(left: 8),
                   child: Text(
                     '預約慢籤\n/ 藥品管理',
                     style: TextStyle(
@@ -314,7 +353,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           Container(
-            padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+            padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
             height: 60,
             width: 290,
             decoration: BoxDecoration(
@@ -332,7 +371,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   size: 35.0,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 10),
+                  padding: EdgeInsets.only(left: 8),
                   child: Text(
                     '衛教資訊',
                     style: TextStyle(
@@ -378,7 +417,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           Container(
-            padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+            padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
             height: 60,
             width: 290,
             decoration: BoxDecoration(
@@ -396,7 +435,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   size: 35.0,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 10),
+                  padding: EdgeInsets.only(left: 8),
                   child: Text(
                     '進度\n/報告查詢',
                     style: TextStyle(
@@ -410,7 +449,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           Container(
-            padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+            padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
             height: 60,
             width: 290,
             decoration: BoxDecoration(
@@ -428,7 +467,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   size: 35.0,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 10),
+                  padding: EdgeInsets.only(left: 8),
                   child: Text(
                     '遠距醫療',
                     style: TextStyle(
@@ -443,32 +482,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      // child: _widgetOptions.elementAt(_selectedIndex),
-      //child: Row(
-
-      // style: ElevatedButton.styleFrom(
-      //   backgroundColor: Color.fromRGBO(94, 153, 86, 1),
-      // ),
-      // onPressed: () {
-      //   Navigator.push(
-      //       context,
-      //       MaterialPageRoute(
-      //           builder: (context) => ReservePage(
-      //                 title: '有寫跟沒寫一樣啊啊啊',
-      //               ),
-      //           maintainState: false));
-      // },
-      // children: <Widget>[
-      //   Icon(
-      //     Icons.app_registration,
-      //     color: Color.fromRGBO(255, 255, 255, 1),
-      //     size: 24.0,
-      //   ),
-      //   SizedBox(
-      //     width: 10,
-      //   ),
-      //   Text("網路掛號 / 預約", style: TextStyle(fontSize: 20)),
-      // ],
 
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
