@@ -28,6 +28,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int tappedIndex = 0;
   int crossAxisCellCount = 4;
   int mainAxisCellCount = 4;
+  final TextEditingController _searchController = TextEditingController();
 
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
@@ -245,211 +246,233 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-
-      
-
-      body: GridView.count(
-        primary: false,
-        padding: const EdgeInsets.all(20),
-        crossAxisSpacing: 10,
-        mainAxisSpacing: 10,
-        crossAxisCount: 2,
-        children: <Widget>[
-          Container(
-            padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
-            height: 60,
-            width: 290,
-            decoration: BoxDecoration(
-              // border: Border.all(
-              //   color: Color(0xFF9EC33B),
-              // ),
-              borderRadius: BorderRadius.circular(10.0),
-              color: Colors.white,
-            ),
-            child: Row(
-              children: <Widget>[
-                Icon(
-                  Icons.app_registration,
-                  color: Color.fromRGBO(94, 153, 86, 1),
-                  size: 35.0,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 8),
-                  child: Text(
-                    '網路預約\n/ 掛號',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromRGBO(94, 153, 86, 1),
-                    ),
+      body: Container(
+        child: GridView.count(
+          primary: false,
+          padding: const EdgeInsets.all(20),
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+          crossAxisCount: 2,
+          children: <Widget>[
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: TextField(
+                controller: _searchController,
+                decoration: InputDecoration(
+                  hintText: 'Search...',
+                  // Add a clear button to the search bar
+                  suffixIcon: IconButton(
+                    icon: Icon(Icons.clear),
+                    onPressed: () => _searchController.clear(),
+                  ),
+                  // Add a search icon or button to the search bar
+                  prefixIcon: IconButton(
+                    icon: Icon(Icons.search),
+                    onPressed: () {
+                      // Perform the search here
+                    },
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                 ),
-              ],
+              ),
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
-            height: 60,
-            width: 290,
-            decoration: BoxDecoration(
-              // border: Border.all(
-              //   color: Color(0xFF9EC33B),
-              // ),
-              borderRadius: BorderRadius.circular(10.0),
-              color: Colors.white,
-            ),
-            child: Row(
-              children: <Widget>[
-                Icon(
-                  Icons.medication,
-                  color: Color.fromRGBO(94, 153, 86, 1),
-                  size: 35.0,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 8),
-                  child: Text(
-                    '預約慢籤\n/ 藥品管理',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromRGBO(94, 153, 86, 1),
+            Container(
+              padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
+              height: 60,
+              width: 290,
+              decoration: BoxDecoration(
+                // border: Border.all(
+                //   color: Color(0xFF9EC33B),
+                // ),
+                borderRadius: BorderRadius.circular(10.0),
+                color: Colors.white,
+              ),
+              child: Row(
+                children: <Widget>[
+                  Icon(
+                    Icons.app_registration,
+                    color: Color.fromRGBO(94, 153, 86, 1),
+                    size: 35.0,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 8),
+                    child: Text(
+                      '網路預約\n/ 掛號',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(94, 153, 86, 1),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
-            height: 60,
-            width: 290,
-            decoration: BoxDecoration(
-              // border: Border.all(
-              //   color: Color(0xFF9EC33B),
-              // ),
-              borderRadius: BorderRadius.circular(10.0),
-              color: Colors.white,
-            ),
-            child: Row(
-              children: <Widget>[
-                Icon(
-                  Icons.medical_information,
-                  color: Color.fromRGBO(94, 153, 86, 1),
-                  size: 35.0,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 8),
-                  child: Text(
-                    '衛教資訊',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromRGBO(94, 153, 86, 1),
+            Container(
+              padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
+              height: 60,
+              width: 290,
+              decoration: BoxDecoration(
+                // border: Border.all(
+                //   color: Color(0xFF9EC33B),
+                // ),
+                borderRadius: BorderRadius.circular(10.0),
+                color: Colors.white,
+              ),
+              child: Row(
+                children: <Widget>[
+                  Icon(
+                    Icons.medication,
+                    color: Color.fromRGBO(94, 153, 86, 1),
+                    size: 35.0,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 8),
+                    child: Text(
+                      '預約慢籤\n/ 藥品管理',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(94, 153, 86, 1),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-            height: 60,
-            width: 290,
-            decoration: BoxDecoration(
-              // border: Border.all(
-              //   color: Color(0xFF9EC33B),
-              // ),
-              borderRadius: BorderRadius.circular(10.0),
-              color: Colors.white,
-            ),
-            child: Row(
-              children: <Widget>[
-                Icon(
-                  Icons.payments,
-                  color: Color.fromRGBO(94, 153, 86, 1),
-                  size: 35.0,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 10),
-                  child: Text(
-                    '醫療繳費',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromRGBO(94, 153, 86, 1),
+            Container(
+              padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
+              height: 60,
+              width: 290,
+              decoration: BoxDecoration(
+                // border: Border.all(
+                //   color: Color(0xFF9EC33B),
+                // ),
+                borderRadius: BorderRadius.circular(10.0),
+                color: Colors.white,
+              ),
+              child: Row(
+                children: <Widget>[
+                  Icon(
+                    Icons.medical_information,
+                    color: Color.fromRGBO(94, 153, 86, 1),
+                    size: 35.0,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 8),
+                    child: Text(
+                      '衛教資訊',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(94, 153, 86, 1),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
-            height: 60,
-            width: 290,
-            decoration: BoxDecoration(
-              // border: Border.all(
-              //   color: Color(0xFF9EC33B),
-              // ),
-              borderRadius: BorderRadius.circular(10.0),
-              color: Colors.white,
-            ),
-            child: Row(
-              children: <Widget>[
-                Icon(
-                  Icons.checklist,
-                  color: Color.fromRGBO(94, 153, 86, 1),
-                  size: 35.0,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 8),
-                  child: Text(
-                    '進度\n/報告查詢',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromRGBO(94, 153, 86, 1),
+            Container(
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+              height: 60,
+              width: 290,
+              decoration: BoxDecoration(
+                // border: Border.all(
+                //   color: Color(0xFF9EC33B),
+                // ),
+                borderRadius: BorderRadius.circular(10.0),
+                color: Colors.white,
+              ),
+              child: Row(
+                children: <Widget>[
+                  Icon(
+                    Icons.payments,
+                    color: Color.fromRGBO(94, 153, 86, 1),
+                    size: 35.0,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 10),
+                    child: Text(
+                      '醫療繳費',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(94, 153, 86, 1),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
-            height: 60,
-            width: 290,
-            decoration: BoxDecoration(
-              // border: Border.all(
-              //   color: Color(0xFF9EC33B),
-              // ),
-              borderRadius: BorderRadius.circular(10.0),
-              color: Colors.white,
-            ),
-            child: Row(
-              children: <Widget>[
-                Icon(
-                  Icons.medical_services,
-                  color: Color.fromRGBO(94, 153, 86, 1),
-                  size: 35.0,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 8),
-                  child: Text(
-                    '遠距醫療',
-                    style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                      color: Color.fromRGBO(94, 153, 86, 1),
+            Container(
+              padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
+              height: 60,
+              width: 290,
+              decoration: BoxDecoration(
+                // border: Border.all(
+                //   color: Color(0xFF9EC33B),
+                // ),
+                borderRadius: BorderRadius.circular(10.0),
+                color: Colors.white,
+              ),
+              child: Row(
+                children: <Widget>[
+                  Icon(
+                    Icons.checklist,
+                    color: Color.fromRGBO(94, 153, 86, 1),
+                    size: 35.0,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 8),
+                    child: Text(
+                      '進度\n/報告查詢',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(94, 153, 86, 1),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+            Container(
+              padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
+              height: 60,
+              width: 290,
+              decoration: BoxDecoration(
+                // border: Border.all(
+                //   color: Color(0xFF9EC33B),
+                // ),
+                borderRadius: BorderRadius.circular(10.0),
+                color: Colors.white,
+              ),
+              child: Row(
+                children: <Widget>[
+                  Icon(
+                    Icons.medical_services,
+                    color: Color.fromRGBO(94, 153, 86, 1),
+                    size: 35.0,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 8),
+                    child: Text(
+                      '遠距醫療',
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(94, 153, 86, 1),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
-
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
