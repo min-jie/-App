@@ -92,7 +92,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
-              text: "亞東紀念醫院",
+              text: "網路掛號 / 預約",
               style: TextStyle(
                 fontSize: 20,
                 color: Color.fromRGBO(56, 129, 47, 1),
