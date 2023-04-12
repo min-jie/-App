@@ -4,8 +4,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/my_flutter_app_icons.dart';
 import 'package:flutter_application/page/homePage/bottomNav/home_index.dart';
+import 'package:flutter_application/page/homePage/bottomNav/peopleService.dart';
+import 'package:flutter_application/page/homePage/bottomNav/personal.dart';
 import 'package:flutter_application/page/homePage/reserve.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+
+import '../list/accountSetting.dart';
+import '../list/appSetting.dart';
+import '../list/logout.dart';
+import '../list/passwordSetting.dart';
+import 'hospitalized.dart';
 
 class MessagePage extends StatefulWidget {
   const MessagePage({super.key, required this.title});
@@ -133,7 +141,13 @@ class _MessagePageState extends State<MessagePage> {
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MyHomePage(
+                              title: '',
+                            )),
+                  );
                 },
               ),
               ListTile(
@@ -145,7 +159,15 @@ class _MessagePageState extends State<MessagePage> {
                   Icons.person,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PersonalPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -156,7 +178,15 @@ class _MessagePageState extends State<MessagePage> {
                   Icons.message,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MessagePage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -167,7 +197,15 @@ class _MessagePageState extends State<MessagePage> {
                   Icons.local_hospital,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const HospitalizedPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -178,7 +216,15 @@ class _MessagePageState extends State<MessagePage> {
                   Icons.heat_pump_sharp,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PeopleServicePage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -189,7 +235,15 @@ class _MessagePageState extends State<MessagePage> {
                   Icons.account_balance,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const AccountSettingPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -200,7 +254,15 @@ class _MessagePageState extends State<MessagePage> {
                   Icons.code,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const AppSettingPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -211,7 +273,15 @@ class _MessagePageState extends State<MessagePage> {
                   Icons.security,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PasswordSettingPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -222,7 +292,15 @@ class _MessagePageState extends State<MessagePage> {
                   Icons.logout,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LogoutPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
             ],
           ),

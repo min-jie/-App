@@ -5,6 +5,10 @@ import 'package:flutter_application/page/homePage/bottomNav/hospitalized.dart';
 import 'package:flutter_application/page/homePage/bottomNav/message.dart';
 import 'package:flutter_application/page/homePage/bottomNav/peopleService.dart';
 import 'package:flutter_application/page/homePage/bottomNav/personal.dart';
+import 'package:flutter_application/page/homePage/list/accountSetting.dart';
+import 'package:flutter_application/page/homePage/list/appSetting.dart';
+import 'package:flutter_application/page/homePage/list/logout.dart';
+import 'package:flutter_application/page/homePage/list/passwordSetting.dart';
 import 'package:flutter_application/page/homePage/reserve.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -159,7 +163,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   Icons.person,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PersonalPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -170,7 +182,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   Icons.message,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MessagePage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -181,7 +201,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   Icons.local_hospital,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const HospitalizedPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -192,7 +220,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   Icons.heat_pump_sharp,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PeopleServicePage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -203,7 +239,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   Icons.account_balance,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const AccountSettingPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -214,7 +258,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   Icons.code,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const AppSettingPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -225,7 +277,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   Icons.security,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PasswordSettingPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -236,7 +296,15 @@ class _MyHomePageState extends State<MyHomePage> {
                   Icons.logout,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LogoutPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
             ],
           ),

@@ -1,5 +1,3 @@
-//import 'dart:html';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/page/homePage/bottomNav/hospitalized.dart';
@@ -11,6 +9,10 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_application/my_flutter_app_icons.dart';
 
 import 'bottomNav/home_index.dart';
+import 'list/accountSetting.dart';
+import 'list/appSetting.dart';
+import 'list/logout.dart';
+import 'list/passwordSetting.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -162,7 +164,15 @@ class ReservePage extends StatelessWidget {
                   Icons.account_balance,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const AccountSettingPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -173,7 +183,15 @@ class ReservePage extends StatelessWidget {
                   Icons.code,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const AppSettingPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -184,7 +202,15 @@ class ReservePage extends StatelessWidget {
                   Icons.security,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PasswordSettingPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -195,7 +221,15 @@ class ReservePage extends StatelessWidget {
                   Icons.logout,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LogoutPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
             ],
           ),
