@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: textStyle.copyWith(color: theme.colorScheme.primary),
                 text: 'https://flutter.dev'),
             TextSpan(style: textStyle, text: '.'),
-          ],
+          ],   
         ),
       ),
     ];
