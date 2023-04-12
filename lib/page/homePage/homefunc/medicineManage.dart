@@ -4,8 +4,6 @@ import 'package:flutter_application/page/homePage/bottomNav/hospitalized.dart';
 import 'package:flutter_application/page/homePage/bottomNav/message.dart';
 import 'package:flutter_application/page/homePage/bottomNav/peopleService.dart';
 import 'package:flutter_application/page/homePage/bottomNav/personal.dart';
-import 'package:flutter_application/page/homePage/reserve.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_application/my_flutter_app_icons.dart';
 
 import '../bottomNav/home_index.dart';
@@ -17,12 +15,12 @@ import '../list/passwordSetting.dart';
 void main() {
   runApp(const MaterialApp(
     title: 'Navigation Basics',
-    home: ReservePage(),
+    home: MedicineManagePage(),
   ));
 }
 
-class ReservePage extends StatelessWidget {
-  const ReservePage({super.key});
+class MedicineManagePage extends StatelessWidget {
+  const MedicineManagePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -244,15 +242,7 @@ class ReservePage extends StatelessWidget {
                 padding: const EdgeInsets.all(10.0),
               ),
               SizedBox(
-                width: 350.0,
-                height: 36.0,
-                child: Text(
-                  '掛號',
-                  style: TextStyle(
-                    color: Color.fromRGBO(120, 120, 120, 1),
-                    fontSize: 20,
-                  ),
-                ),
+                height: 10.0,
               ),
               Padding(
                 padding: const EdgeInsets.all(3.0),
@@ -262,11 +252,11 @@ class ReservePage extends StatelessWidget {
                 height: 84.0,
                 child: ElevatedButton.icon(
                   icon: Icon(
-                    MyFlutterApp.laptop_medical,
+                    Icons.file_copy,
                     size: 24.0,
                   ),
                   label: Text(
-                    '科別掛號',
+                    '預約慢箋',
                     style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
                   ),
                   style: ElevatedButton.styleFrom(
@@ -291,80 +281,6 @@ class ReservePage extends StatelessWidget {
               ),
               SizedBox(
                 width: 350.0,
-                height: 84.0,
-                child: ElevatedButton.icon(
-                  icon: Icon(
-                    MyFlutterApp.user_md,
-                    size: 24.0,
-                  ),
-                  label: Text(
-                    '醫師掛號',
-                    style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
-                  ),
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.only(left: 0),
-                    backgroundColor:
-                        Color.fromRGBO(83, 194, 141, 1), // Background color
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const DoctorRoute()),
-                    );
-                  },
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-              ),
-              SizedBox(
-                width: 350.0,
-                height: 63.0,
-                child: ElevatedButton.icon(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor:
-                        Color.fromRGBO(238, 125, 110, 1), // Background color
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const CancelRoute()),
-                    );
-                  },
-                  icon: Icon(
-                    Icons.cancel,
-                    size: 24.0,
-                  ),
-                  label: Text(
-                    '取消掛號',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-              ),
-              SizedBox(
-                width: 350.0,
-                height: 36.0,
-                child: Text(
-                  '預約',
-                  style: TextStyle(
-                    color: Color.fromRGBO(120, 120, 120, 1),
-                    fontSize: 20,
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 350.0,
                 height: 63.0,
                 child: OutlinedButton(
                   style: OutlinedButton.styleFrom(
@@ -376,7 +292,7 @@ class ReservePage extends StatelessWidget {
                   ),
                   onPressed: () {},
                   child: Text(
-                    '預約掛號與就診紀錄',
+                    '藥物處方紀錄',
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -400,7 +316,7 @@ class ReservePage extends StatelessWidget {
                   ),
                   onPressed: () {},
                   child: Text(
-                    '預約抽血',
+                    '藥品衛教',
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -424,7 +340,7 @@ class ReservePage extends StatelessWidget {
                   ),
                   onPressed: () {},
                   child: Text(
-                    '健檢篩檢預約',
+                    '藥物過敏註記',
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -435,137 +351,7 @@ class ReservePage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(10.0),
               ),
-              SizedBox(
-                width: 350.0,
-                height: 63.0,
-                child: OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                    side: BorderSide(
-                        width: 2.0, color: Color.fromRGBO(145, 200, 137, 1)),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    'PCR預約等擴充',
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromRGBO(88, 103, 86, 1)),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-              ),
-              SizedBox(
-                width: 350.0,
-                height: 36.0,
-                child: Text(
-                  '其他',
-                  style: TextStyle(
-                    color: Color.fromRGBO(120, 120, 120, 1),
-                    fontSize: 20,
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 350.0,
-                height: 63.0,
-                child: OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                    side: BorderSide(
-                        width: 2.0, color: Color.fromRGBO(145, 200, 137, 1)),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    '專線掛號',
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromRGBO(88, 103, 86, 1)),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-              ),
-              SizedBox(
-                width: 350.0,
-                height: 63.0,
-                child: OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                    side: BorderSide(
-                        width: 2.0, color: Color.fromRGBO(145, 200, 137, 1)),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    '門診時刻表',
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromRGBO(88, 103, 86, 1)),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-              ),
-              SizedBox(
-                width: 350.0,
-                height: 63.0,
-                child: OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                    side: BorderSide(
-                        width: 2.0, color: Color.fromRGBO(145, 200, 137, 1)),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    '該看哪科？',
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromRGBO(88, 103, 86, 1)),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-              ),
-              SizedBox(
-                width: 350.0,
-                height: 63.0,
-                child: OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                    side: BorderSide(
-                        width: 2.0, color: Color.fromRGBO(145, 200, 137, 1)),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    '醫師介紹',
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromRGBO(88, 103, 86, 1)),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(50.0),
-              ),
+              
             ],
           ),
         ),

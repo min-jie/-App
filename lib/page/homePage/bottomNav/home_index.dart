@@ -10,6 +10,7 @@ import 'package:flutter_application/page/homePage/list/appSetting.dart';
 import 'package:flutter_application/page/homePage/list/logout.dart';
 import 'package:flutter_application/page/homePage/list/passwordSetting.dart';
 
+import '../homefunc/medicineManage.dart';
 import '../homefunc/payment.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -64,21 +65,6 @@ class _MyHomePageState extends State<MyHomePage> {
     final TextStyle textStyle = theme.textTheme.bodyMedium!;
     final List<Widget> aboutBoxChildren = <Widget>[
       const SizedBox(height: 24),
-      RichText(
-        text: TextSpan(
-          children: <TextSpan>[
-            TextSpan(
-                style: textStyle,
-                text: "Flutter is Googe's UI toolkit for building beautiful, "
-                    'natively compiled applications for mobile, web, and desktop'
-                    'from a single codebase. Learn more about Flutter at '),
-            TextSpan(
-                style: textStyle.copyWith(color: theme.colorScheme.primary),
-                text: 'https://flutter.dev'),
-            TextSpan(style: textStyle, text: '.'),
-          ],
-        ),
-      ),
     ];
 
     return Scaffold(
@@ -424,7 +410,8 @@ class homeContent extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const ReservePage()),
+              MaterialPageRoute(
+                  builder: (context) => const MedicineManagePage()),
             );
           },
         ),
