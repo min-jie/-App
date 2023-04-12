@@ -9,8 +9,8 @@ import 'package:flutter_application/page/homePage/list/accountSetting.dart';
 import 'package:flutter_application/page/homePage/list/appSetting.dart';
 import 'package:flutter_application/page/homePage/list/logout.dart';
 import 'package:flutter_application/page/homePage/list/passwordSetting.dart';
-import 'package:flutter_application/page/homePage/reserve.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+
+import '../homefunc/payment.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: textStyle.copyWith(color: theme.colorScheme.primary),
                 text: 'https://flutter.dev'),
             TextSpan(style: textStyle, text: '.'),
-          ],   
+          ],
         ),
       ),
     ];

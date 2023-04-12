@@ -6,8 +6,6 @@ import 'package:flutter_application/my_flutter_app_icons.dart';
 import 'package:flutter_application/page/homePage/bottomNav/home_index.dart';
 import 'package:flutter_application/page/homePage/bottomNav/peopleService.dart';
 import 'package:flutter_application/page/homePage/bottomNav/personal.dart';
-import 'package:flutter_application/page/homePage/reserve.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../list/accountSetting.dart';
 import '../list/appSetting.dart';
