@@ -1,8 +1,11 @@
+// 個人化
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/my_flutter_app_icons.dart';
 import 'package:flutter_application/page/homePage/reserve.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -92,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
-              text: "亞東紀念醫院",
+              text: "網路掛號 / 預約",
               style: TextStyle(
                 fontSize: 20,
                 color: Color.fromRGBO(56, 129, 47, 1),

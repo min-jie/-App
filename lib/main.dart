@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/page/homePage/home_index.dart';
+import 'package:flutter_application/page/homePage/bottomNav/home_index.dart';
 
 void main() {
   runApp(const MyApp());

@@ -13,22 +13,21 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-// class _Page01 extends StatelessWidget{
-//   @override
-//   Widget build(BuildContext context) {
-//     return RaisedButton(
-//       child: Text('Go to Page02'),
-//       onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => Page02()));},
-//     );
-//   }
-// }
-
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
   int tappedIndex = 0;
   int crossAxisCellCount = 4;
   int mainAxisCellCount = 4;
+
+  int _currentIndex = 0;  // 切換頁面用
+
   final TextEditingController _searchController = TextEditingController();
+  // List _pageList = [
+  //   MyHomePage(),
+  //   SettingPage(),
+  //   CategoryPage(),
+  //   MyselfPage()
+  // ];
 
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
@@ -92,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
-              text: "網路掛號 / 預約",
+              text: "亞東紀念醫院",
               style: TextStyle(
                 fontSize: 20,
                 color: Color.fromRGBO(56, 129, 47, 1),
