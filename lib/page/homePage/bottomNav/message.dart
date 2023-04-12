@@ -85,12 +85,13 @@ class _MessagePageState extends State<MessagePage> {
         title: RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
-              text: "亞東訊息",
-              style: TextStyle(
-                fontSize: 20,
-                color: Color.fromRGBO(56, 129, 47, 1),
-                fontWeight: FontWeight.w700,
-              ),),
+            text: "亞東訊息",
+            style: TextStyle(
+              fontSize: 20,
+              color: Color.fromRGBO(56, 129, 47, 1),
+              fontWeight: FontWeight.w700,
+            ),
+          ),
         ),
         actions: <Widget>[
           IconButton(

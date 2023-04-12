@@ -1,4 +1,4 @@
-// 個人化
+// 便民服務
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -133,7 +133,13 @@ class _PeopleServicePageState extends State<PeopleServicePage> {
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MyHomePage(
+                              title: '',
+                            )),
+                  );
                 },
               ),
               ListTile(

@@ -1,18 +1,26 @@
+//import 'dart:html';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application/page/homePage/bottomNav/hospitalized.dart';
+import 'package:flutter_application/page/homePage/bottomNav/message.dart';
+import 'package:flutter_application/page/homePage/bottomNav/peopleService.dart';
+import 'package:flutter_application/page/homePage/bottomNav/personal.dart';
 import 'package:flutter_application/page/homePage/reserve.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_application/my_flutter_app_icons.dart';
 
+import 'bottomNav/home_index.dart';
+
 void main() {
   runApp(const MaterialApp(
     title: 'Navigation Basics',
-    home: FirstRoute(),
+    home: ReservePage(),
   ));
 }
 
-class FirstRoute extends StatelessWidget {
-  const FirstRoute({super.key});
+class ReservePage extends StatelessWidget {
+  const ReservePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +68,13 @@ class FirstRoute extends StatelessWidget {
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MyHomePage(
+                              title: '',
+                            )),
+                  );
                 },
               ),
               ListTile(
@@ -72,7 +86,15 @@ class FirstRoute extends StatelessWidget {
                   Icons.person,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PersonalPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -83,7 +105,15 @@ class FirstRoute extends StatelessWidget {
                   Icons.message,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MessagePage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -94,7 +124,15 @@ class FirstRoute extends StatelessWidget {
                   Icons.local_hospital,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const HospitalizedPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -105,7 +143,15 @@ class FirstRoute extends StatelessWidget {
                   Icons.heat_pump_sharp,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PeopleServicePage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -201,7 +247,7 @@ class FirstRoute extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const DeapertRoute()),
+                          builder: (context) => const DepartRoute()),
                     );
                   },
                 ),
@@ -495,8 +541,8 @@ class FirstRoute extends StatelessWidget {
 }
 
 // 科別掛號
-class DeapertRoute extends StatelessWidget {
-  const DeapertRoute({super.key});
+class DepartRoute extends StatelessWidget {
+  const DepartRoute({super.key});
 
   @override
   Widget build(BuildContext context) {

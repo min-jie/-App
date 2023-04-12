@@ -5,6 +5,7 @@ import 'package:flutter_application/page/homePage/bottomNav/hospitalized.dart';
 import 'package:flutter_application/page/homePage/bottomNav/message.dart';
 import 'package:flutter_application/page/homePage/bottomNav/peopleService.dart';
 import 'package:flutter_application/page/homePage/bottomNav/personal.dart';
+import 'package:flutter_application/page/homePage/reserve.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -16,6 +17,7 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+// title, appBar, bottomNavbar
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
   int tappedIndex = 0;
@@ -45,28 +47,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  // static const List<Widget> _widgetOptions = <Widget>[
-  //   Text(
-  //     '個人化',
-  //     style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-  //   ),
-  //   Text(
-  //     '亞東訊息',
-  //     style: optionStyle,
-  //   ),
-  //   Text(
-  //     '首頁',
-  //     style: optionStyle,
-  //   ),
-  //   Text(
-  //     '住院專區',
-  //     style: optionStyle,
-  //   ),
-  //   Text(
-  //     '便民服務',
-  //     style: optionStyle,
-  //   ),
-  // ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -128,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Color.fromRGBO(56, 129, 47, 1),
             ),
             onPressed: () {
-              // do something
+// do something
             },
           )
         ],
@@ -161,7 +141,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MyHomePage(
+                              title: '',
+                            )),
+                  );
                 },
               ),
               ListTile(
@@ -257,214 +243,6 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: homeContent(currentPageIndex),
-      //   child: GridView.count(
-      //     primary: false,
-      //     padding: const EdgeInsets.all(20),
-      //     crossAxisSpacing: 10,
-      //     mainAxisSpacing: 10,
-      //     crossAxisCount: 2,
-      //     children: <Widget>[
-      //       Container(
-      //         padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      //         child: TextField(
-      //           controller: _searchController,
-      //           decoration: InputDecoration(
-      //             hintText: 'Search...',
-      //             // Add a clear button to the search bar
-      //             suffixIcon: IconButton(
-      //               icon: Icon(Icons.clear),
-      //               onPressed: () => _searchController.clear(),
-      //             ),
-      //             // Add a search icon or button to the search bar
-      //             prefixIcon: IconButton(
-      //               icon: Icon(Icons.search),
-      //               onPressed: () {
-      //                 // Perform the search here
-      //               },
-      //             ),
-      //             border: OutlineInputBorder(
-      //               borderRadius: BorderRadius.circular(20.0),
-      //             ),
-      //           ),
-      //         ),
-      //       ),
-      //       Container(
-      //         padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
-      //         height: 60,
-      //         width: 290,
-      //         decoration: BoxDecoration(
-      //           borderRadius: BorderRadius.circular(10.0),
-      //           color: Colors.white,
-      //         ),
-      //         child: Row(
-      //           children: <Widget>[
-      //             Icon(
-      //               Icons.app_registration,
-      //               color: Color.fromRGBO(94, 153, 86, 1),
-      //               size: 35.0,
-      //             ),
-      //             Padding(
-      //               padding: EdgeInsets.only(left: 8),
-      //               child: Text(
-      //                 '網路預約\n/ 掛號',
-      //                 style: TextStyle(
-      //                   fontSize: 20.0,
-      //                   fontWeight: FontWeight.bold,
-      //                   color: Color.fromRGBO(94, 153, 86, 1),
-      //                 ),
-      //               ),
-      //             ),
-      //           ],
-      //         ),
-      //       ),
-      //       Container(
-      //         padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
-      //         height: 60,
-      //         width: 290,
-      //         decoration: BoxDecoration(
-      //           borderRadius: BorderRadius.circular(10.0),
-      //           color: Colors.white,
-      //         ),
-      //         child: Row(
-      //           children: <Widget>[
-      //             Icon(
-      //               Icons.medication,
-      //               color: Color.fromRGBO(94, 153, 86, 1),
-      //               size: 35.0,
-      //             ),
-      //             Padding(
-      //               padding: EdgeInsets.only(left: 8),
-      //               child: Text(
-      //                 '預約慢籤\n/ 藥品管理',
-      //                 style: TextStyle(
-      //                   fontSize: 20.0,
-      //                   fontWeight: FontWeight.bold,
-      //                   color: Color.fromRGBO(94, 153, 86, 1),
-      //                 ),
-      //               ),
-      //             ),
-      //           ],
-      //         ),
-      //       ),
-      //       Container(
-      //         padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
-      //         height: 60,
-      //         width: 290,
-      //         decoration: BoxDecoration(
-      //           borderRadius: BorderRadius.circular(10.0),
-      //           color: Colors.white,
-      //         ),
-      //         child: Row(
-      //           children: <Widget>[
-      //             Icon(
-      //               Icons.medical_information,
-      //               color: Color.fromRGBO(94, 153, 86, 1),
-      //               size: 35.0,
-      //             ),
-      //             Padding(
-      //               padding: EdgeInsets.only(left: 8),
-      //               child: Text(
-      //                 '衛教資訊',
-      //                 style: TextStyle(
-      //                   fontSize: 20.0,
-      //                   fontWeight: FontWeight.bold,
-      //                   color: Color.fromRGBO(94, 153, 86, 1),
-      //                 ),
-      //               ),
-      //             ),
-      //           ],
-      //         ),
-      //       ),
-      //       Container(
-      //         padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-      //         height: 60,
-      //         width: 290,
-      //         decoration: BoxDecoration(
-      //           borderRadius: BorderRadius.circular(10.0),
-      //           color: Colors.white,
-      //         ),
-      //         child: Row(
-      //           children: <Widget>[
-      //             Icon(
-      //               Icons.payments,
-      //               color: Color.fromRGBO(94, 153, 86, 1),
-      //               size: 35.0,
-      //             ),
-      //             Padding(
-      //               padding: EdgeInsets.only(left: 10),
-      //               child: Text(
-      //                 '醫療繳費',
-      //                 style: TextStyle(
-      //                   fontSize: 20.0,
-      //                   fontWeight: FontWeight.bold,
-      //                   color: Color.fromRGBO(94, 153, 86, 1),
-      //                 ),
-      //               ),
-      //             ),
-      //           ],
-      //         ),
-      //       ),
-      //       Container(
-      //         padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
-      //         height: 60,
-      //         width: 290,
-      //         decoration: BoxDecoration(
-      //           borderRadius: BorderRadius.circular(10.0),
-      //           color: Colors.white,
-      //         ),
-      //         child: Row(
-      //           children: <Widget>[
-      //             Icon(
-      //               Icons.checklist,
-      //               color: Color.fromRGBO(94, 153, 86, 1),
-      //               size: 35.0,
-      //             ),
-      //             Padding(
-      //               padding: EdgeInsets.only(left: 8),
-      //               child: Text(
-      //                 '進度\n/報告查詢',
-      //                 style: TextStyle(
-      //                   fontSize: 20.0,
-      //                   fontWeight: FontWeight.bold,
-      //                   color: Color.fromRGBO(94, 153, 86, 1),
-      //                 ),
-      //               ),
-      //             ),
-      //           ],
-      //         ),
-      //       ),
-      //       Container(
-      //         padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
-      //         height: 60,
-      //         width: 290,
-      //         decoration: BoxDecoration(
-      //           borderRadius: BorderRadius.circular(10.0),
-      //           color: Colors.white,
-      //         ),
-      //         child: Row(
-      //           children: <Widget>[
-      //             Icon(
-      //               Icons.medical_services,
-      //               color: Color.fromRGBO(94, 153, 86, 1),
-      //               size: 35.0,
-      //             ),
-      //             Padding(
-      //               padding: EdgeInsets.only(left: 8),
-      //               child: Text(
-      //                 '遠距醫療',
-      //                 style: TextStyle(
-      //                   fontSize: 20.0,
-      //                   fontWeight: FontWeight.bold,
-      //                   color: Color.fromRGBO(94, 153, 86, 1),
-      //                 ),
-      //               ),
-      //             ),
-      //           ],
-      //         ),
-      //       ),
-      //     ],
-      //   ),
-      // ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentPageIndex,
         onTap: (int index) {
@@ -502,12 +280,13 @@ class _MyHomePageState extends State<MyHomePage> {
         selectedFontSize: 18,
         unselectedItemColor: Color.fromRGBO(88, 103, 86, 1),
         selectedItemColor: Color.fromRGBO(248, 177, 172, 1),
-        //onTap: _onItemTapped,
+//onTap: _onItemTapped,
       ),
     );
   }
 }
 
+// 內文
 class homeContent extends StatelessWidget {
   final title;
 
@@ -522,179 +301,184 @@ class homeContent extends StatelessWidget {
       mainAxisSpacing: 10,
       crossAxisCount: 2,
       children: <Widget>[
-        Container(
-          padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
-          height: 60,
-          width: 290,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.0),
-            color: Colors.white,
+        // 網路掛號 / 預約
+        ElevatedButton.icon(
+          icon: Icon(
+            Icons.app_registration,
+            color: Color.fromRGBO(94, 153, 86, 1),
+            size: 35.0,
           ),
-          child: Row(
-            children: <Widget>[
-              Icon(
-                Icons.app_registration,
-                color: Color.fromRGBO(94, 153, 86, 1),
-                size: 35.0,
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 8),
-                child: Text(
-                  '網路預約\n/ 掛號',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromRGBO(94, 153, 86, 1),
-                  ),
-                ),
-              ),
-            ],
+          label: Text(
+            '網路掛號\n/ 預約',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Color.fromRGBO(94, 153, 86, 1),
+            ),
           ),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.white,
+            padding: EdgeInsets.only(left: 0),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ReservePage()),
+            );
+          },
         ),
-        Container(
-          padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
-          height: 60,
-          width: 290,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.0),
-            color: Colors.white,
+
+        // 預約慢籤 / 藥品管理
+        ElevatedButton.icon(
+          icon: Icon(
+            Icons.medication,
+            color: Color.fromRGBO(94, 153, 86, 1),
+            size: 35.0,
           ),
-          child: Row(
-            children: <Widget>[
-              Icon(
-                Icons.medication,
-                color: Color.fromRGBO(94, 153, 86, 1),
-                size: 35.0,
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 8),
-                child: Text(
-                  '預約慢籤\n/ 藥品管理',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromRGBO(94, 153, 86, 1),
-                  ),
-                ),
-              ),
-            ],
+          label: Text(
+            '預約慢籤\n/ 藥品管理',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Color.fromRGBO(94, 153, 86, 1),
+            ),
           ),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.white,
+            padding: EdgeInsets.only(left: 0),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ReservePage()),
+            );
+          },
         ),
-        Container(
-          padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
-          height: 60,
-          width: 290,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.0),
-            color: Colors.white,
+
+        // 衛教資訊
+        ElevatedButton.icon(
+          icon: Icon(
+            Icons.medical_information,
+            color: Color.fromRGBO(94, 153, 86, 1),
+            size: 35.0,
           ),
-          child: Row(
-            children: <Widget>[
-              Icon(
-                Icons.medical_information,
-                color: Color.fromRGBO(94, 153, 86, 1),
-                size: 35.0,
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 8),
-                child: Text(
-                  '衛教資訊',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromRGBO(94, 153, 86, 1),
-                  ),
-                ),
-              ),
-            ],
+          label: Text(
+            '衛教資訊',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Color.fromRGBO(94, 153, 86, 1),
+            ),
           ),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.white,
+            padding: EdgeInsets.only(left: 0),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ReservePage()),
+            );
+          },
         ),
-        Container(
-          padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
-          height: 60,
-          width: 290,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.0),
-            color: Colors.white,
+
+        // 醫療繳費
+        ElevatedButton.icon(
+          icon: Icon(
+            Icons.payments,
+            color: Color.fromRGBO(94, 153, 86, 1),
+            size: 35.0,
           ),
-          child: Row(
-            children: <Widget>[
-              Icon(
-                Icons.payments,
-                color: Color.fromRGBO(94, 153, 86, 1),
-                size: 35.0,
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 10),
-                child: Text(
-                  '醫療繳費',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromRGBO(94, 153, 86, 1),
-                  ),
-                ),
-              ),
-            ],
+          label: Text(
+            '醫療繳費',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Color.fromRGBO(94, 153, 86, 1),
+            ),
           ),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.white,
+            padding: EdgeInsets.only(left: 0),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ReservePage()),
+            );
+          },
         ),
-        Container(
-          padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
-          height: 60,
-          width: 290,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.0),
-            color: Colors.white,
+
+        // 進度 /報告查詢
+        ElevatedButton.icon(
+          icon: Icon(
+            Icons.checklist,
+            color: Color.fromRGBO(94, 153, 86, 1),
+            size: 35.0,
           ),
-          child: Row(
-            children: <Widget>[
-              Icon(
-                Icons.checklist,
-                color: Color.fromRGBO(94, 153, 86, 1),
-                size: 35.0,
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 8),
-                child: Text(
-                  '進度\n/報告查詢',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromRGBO(94, 153, 86, 1),
-                  ),
-                ),
-              ),
-            ],
+          label: Text(
+            '進度\n/報告查詢',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Color.fromRGBO(94, 153, 86, 1),
+            ),
           ),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.white,
+            padding: EdgeInsets.only(left: 0),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ReservePage()),
+            );
+          },
         ),
-        Container(
-          padding: const EdgeInsets.fromLTRB(14, 10, 20, 10),
-          height: 60,
-          width: 290,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.0),
-            color: Colors.white,
+
+        // 遠距醫療
+        ElevatedButton.icon(
+          icon: Icon(
+            Icons.medical_services,
+            color: Color.fromRGBO(94, 153, 86, 1),
+            size: 35.0,
           ),
-          child: Row(
-            children: <Widget>[
-              Icon(
-                Icons.medical_services,
-                color: Color.fromRGBO(94, 153, 86, 1),
-                size: 35.0,
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 8),
-                child: Text(
-                  '遠距醫療',
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
-                    color: Color.fromRGBO(94, 153, 86, 1),
-                  ),
-                ),
-              ),
-            ],
+          label: Text(
+            '遠距醫療',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Color.fromRGBO(94, 153, 86, 1),
+            ),
           ),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.white,
+            padding: EdgeInsets.only(left: 0),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ReservePage()),
+            );
+          },
         ),
       ],
     );

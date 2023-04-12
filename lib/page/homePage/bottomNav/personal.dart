@@ -133,7 +133,13 @@ class _PersonalPageState extends State<PersonalPage> {
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
                 onTap: () {
-                  Navigator.pop(context);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MyHomePage(
+                              title: '',
+                            )),
+                  );
                 },
               ),
               ListTile(
