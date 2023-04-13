@@ -7,6 +7,7 @@ import 'package:flutter_application/page/homePage/bottomNav/personal.dart';
 import 'package:flutter_application/page/homePage/homefunc/reserve.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_application/my_flutter_app_icons.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../bottomNav/home_index.dart';
 import '../list/accountSetting.dart';
@@ -19,6 +20,14 @@ void main() {
     title: 'Navigation Basics',
     home: ProgressCheckPage(),
   ));
+}
+
+final Uri _url = Uri.parse('https://www.femh.org.tw/visit/visit?Action=9');
+
+Future<void> _launchUrl() async {
+  if (!await launchUrl(_url)) {
+    throw Exception('Could not launch $_url');
+  }
 }
 
 class MyTabbedPage extends StatefulWidget {
@@ -329,13 +338,7 @@ class ProgressCheckPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const DepartRoute()),
-                    );
-                  },
+                  onPressed: _launchUrl,
                 ),
               ),
               Padding(
