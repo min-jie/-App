@@ -255,7 +255,7 @@ class _MedInformPageState extends State<MedInformPage>
                   tabs: [
                     Tab(text: '醫院新訊'),
                     Tab(text: '活動訊息'),
-                    Tab(text: '醫訊'),
+                    Tab(text: '院訊'),
                   ],
                 ),
               ),
@@ -266,26 +266,59 @@ class _MedInformPageState extends State<MedInformPage>
                 physics: NeverScrollableScrollPhysics(),
                 children: <Widget>[
                   Center(
-                      child: ListView.separated(
-                    padding: const EdgeInsets.all(20),
-                    itemCount: entries.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return Container(
-                        alignment: Alignment.centerLeft,
-                        height: 50,
-                        color: Color.fromRGBO(234, 249, 232, 1),
-                        child: Center(child: Text('${entries[index]}')),
-                      );
-                    },
-                    separatorBuilder: (BuildContext context, int index) =>
-                        const Divider(),
-                  )),
-                  Center(child: Text('view2')),
-                  Center(child: Text('view3')),
+                    child: Container(
+                        child: ListView.separated(
+                      padding: const EdgeInsets.all(20),
+                      itemCount: entries.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Container(
+                          alignment: Alignment.centerLeft,
+                          height: 50,
+                          color: Color.fromRGBO(234, 249, 232, 1),
+                          child: Center(child: Text('${entries[index]}')),
+                        );
+                      },
+                      separatorBuilder: (BuildContext context, int index) =>
+                          const Divider(),
+                    )),
+                  ),
+                  Center(
+                    child: Container(
+                        child: ListView.separated(
+                      padding: const EdgeInsets.all(20),
+                      itemCount: entries.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Container(
+                          alignment: Alignment.centerLeft,
+                          height: 50,
+                          color: Color.fromRGBO(234, 249, 232, 1),
+                          child: Center(child: Text('${entries[index]}')),
+                        );
+                      },
+                      separatorBuilder: (BuildContext context, int index) =>
+                          const Divider(),
+                    )),
+                  ),
+                  Center(
+                    child: Container(
+                        child: ListView.separated(
+                      padding: const EdgeInsets.all(20),
+                      itemCount: entries.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Container(
+                          alignment: Alignment.centerLeft,
+                          height: 50,
+                          color: Color.fromRGBO(234, 249, 232, 1),
+                          child: Center(child: Text('${entries[index]}')),
+                        );
+                      },
+                      separatorBuilder: (BuildContext context, int index) =>
+                          const Divider(),
+                    )),
+                  ),
                 ],
               ),
             ),
-            
           ],
         ),
       ),
