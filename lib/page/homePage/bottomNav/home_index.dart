@@ -9,9 +9,8 @@ import 'package:flutter_application/page/homePage/list/accountSetting.dart';
 import 'package:flutter_application/page/homePage/list/appSetting.dart';
 import 'package:flutter_application/page/homePage/list/logout.dart';
 import 'package:flutter_application/page/homePage/list/passwordSetting.dart';
-
-import '../homefunc/medicineManage.dart';
-import '../homefunc/payment.dart';
+import 'package:flutter_application/page/homePage/homefunc/reserve.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -34,19 +33,19 @@ class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController _searchController = TextEditingController();
   List<Widget> pages = [
     PersonalPage(
-      title: '',
+      title: '個人化',
     ),
     MessagePage(
-      title: '',
+      title: '亞東訊息',
     ),
     MyHomePage(
-      title: '',
+      title: '首頁',
     ),
     HospitalizedPage(
-      title: '',
+      title: '住院專區',
     ),
     PeopleServicePage(
-      title: '',
+      title: '便民服務',
     ),
   ];
 
@@ -296,12 +295,12 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
       ),
-      body: homeContent(currentPageIndex),
+      body: HomeContent(currentPageIndex),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentPageIndex,
         onTap: (int index) {
           setState(() {
-            this.currentPageIndex = index; //此處實現頁面跳轉，根據pageList的索引值跳轉到對應頁面
+            currentPageIndex = index; //此處實現頁面跳轉，根據pageList的索引值跳轉到對應頁面
           });
         },
         items: const <BottomNavigationBarItem>[
@@ -341,10 +340,10 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 // 內文
-class homeContent extends StatelessWidget {
+class HomeContent extends StatelessWidget {
   final title;
 
-  const homeContent(this.title);
+  const HomeContent(this.title, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -410,8 +409,7 @@ class homeContent extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                  builder: (context) => const MedicineManagePage()),
+              MaterialPageRoute(builder: (context) => const ReservePage()),
             );
           },
         ),

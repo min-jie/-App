@@ -1,8 +1,15 @@
 // 便民服務
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application/my_flutter_app_icons.dart';
 import 'package:flutter_application/page/homePage/bottomNav/home_index.dart';
+
+import '../bottomNav/hospitalized.dart';
+import '../bottomNav/message.dart';
+import '../bottomNav/peopleService.dart';
+import '../bottomNav/personal.dart';
+import 'accountSetting.dart';
+import 'appSetting.dart';
+import 'logout.dart';
 
 class PasswordSettingPage extends StatefulWidget {
   const PasswordSettingPage({super.key, required this.title});
@@ -57,21 +64,6 @@ class _PasswordSettingPageState extends State<PasswordSettingPage> {
     final TextStyle textStyle = theme.textTheme.bodyMedium!;
     final List<Widget> aboutBoxChildren = <Widget>[
       const SizedBox(height: 24),
-      RichText(
-        text: TextSpan(
-          children: <TextSpan>[
-            TextSpan(
-                style: textStyle,
-                text: "Flutter is Googe's UI toolkit for building beautiful, "
-                    'natively compiled applications for mobile, web, and desktop'
-                    'from a single codebase. Learn more about Flutter at '),
-            TextSpan(
-                style: textStyle.copyWith(color: theme.colorScheme.primary),
-                text: 'https://flutter.dev'),
-            TextSpan(style: textStyle, text: '.'),
-          ],
-        ),
-      ),
     ];
 
     return Scaffold(
@@ -82,7 +74,7 @@ class _PasswordSettingPageState extends State<PasswordSettingPage> {
         title: RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
-            text: "便民服務",
+            text: "密碼設定",
             style: TextStyle(
               fontSize: 20,
               color: Color.fromRGBO(56, 129, 47, 1),
@@ -148,7 +140,15 @@ class _PasswordSettingPageState extends State<PasswordSettingPage> {
                   Icons.person,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PersonalPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -159,7 +159,15 @@ class _PasswordSettingPageState extends State<PasswordSettingPage> {
                   Icons.message,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MessagePage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -170,7 +178,15 @@ class _PasswordSettingPageState extends State<PasswordSettingPage> {
                   Icons.local_hospital,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const HospitalizedPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -181,7 +197,15 @@ class _PasswordSettingPageState extends State<PasswordSettingPage> {
                   Icons.heat_pump_sharp,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PeopleServicePage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -192,7 +216,15 @@ class _PasswordSettingPageState extends State<PasswordSettingPage> {
                   Icons.account_balance,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const AccountSettingPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -203,7 +235,15 @@ class _PasswordSettingPageState extends State<PasswordSettingPage> {
                   Icons.code,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const AppSettingPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -214,7 +254,15 @@ class _PasswordSettingPageState extends State<PasswordSettingPage> {
                   Icons.security,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PasswordSettingPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -225,7 +273,15 @@ class _PasswordSettingPageState extends State<PasswordSettingPage> {
                   Icons.logout,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LogoutPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
             ],
           ),

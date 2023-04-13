@@ -4,15 +4,15 @@ import 'package:flutter_application/page/homePage/bottomNav/hospitalized.dart';
 import 'package:flutter_application/page/homePage/bottomNav/message.dart';
 import 'package:flutter_application/page/homePage/bottomNav/peopleService.dart';
 import 'package:flutter_application/page/homePage/bottomNav/personal.dart';
-import 'package:flutter_application/page/homePage/reserve.dart';
+import 'package:flutter_application/page/homePage/homefunc/reserve.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_application/my_flutter_app_icons.dart';
 
-import 'bottomNav/home_index.dart';
-import 'list/accountSetting.dart';
-import 'list/appSetting.dart';
-import 'list/logout.dart';
-import 'list/passwordSetting.dart';
+import '../bottomNav/home_index.dart';
+import '../list/accountSetting.dart';
+import '../list/appSetting.dart';
+import '../list/logout.dart';
+import '../list/passwordSetting.dart';
 
 void main() {
   runApp(const MaterialApp(

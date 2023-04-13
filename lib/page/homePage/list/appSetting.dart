@@ -4,6 +4,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/my_flutter_app_icons.dart';
 import 'package:flutter_application/page/homePage/bottomNav/home_index.dart';
+import 'package:flutter_application/page/homePage/list/passwordSetting.dart';
+
+import '../bottomNav/hospitalized.dart';
+import '../bottomNav/message.dart';
+import '../bottomNav/peopleService.dart';
+import '../bottomNav/personal.dart';
+import 'accountSetting.dart';
+import 'logout.dart';
 
 class AppSettingPage extends StatefulWidget {
   const AppSettingPage({super.key, required this.title});
@@ -83,7 +91,7 @@ class _AppSettingPageState extends State<AppSettingPage> {
         title: RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
-            text: "便民服務",
+            text: "程式設定",
             style: TextStyle(
               fontSize: 20,
               color: Color.fromRGBO(56, 129, 47, 1),
@@ -149,7 +157,15 @@ class _AppSettingPageState extends State<AppSettingPage> {
                   Icons.person,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PersonalPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -160,7 +176,15 @@ class _AppSettingPageState extends State<AppSettingPage> {
                   Icons.message,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const MessagePage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -171,7 +195,15 @@ class _AppSettingPageState extends State<AppSettingPage> {
                   Icons.local_hospital,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const HospitalizedPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -182,7 +214,15 @@ class _AppSettingPageState extends State<AppSettingPage> {
                   Icons.heat_pump_sharp,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PeopleServicePage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -193,7 +233,15 @@ class _AppSettingPageState extends State<AppSettingPage> {
                   Icons.account_balance,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const AccountSettingPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -204,7 +252,15 @@ class _AppSettingPageState extends State<AppSettingPage> {
                   Icons.code,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const AppSettingPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -215,7 +271,15 @@ class _AppSettingPageState extends State<AppSettingPage> {
                   Icons.security,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PasswordSettingPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               ListTile(
                 title: const Text(
@@ -226,7 +290,15 @@ class _AppSettingPageState extends State<AppSettingPage> {
                   Icons.logout,
                   color: Color.fromRGBO(128, 136, 127, 1),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const LogoutPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
             ],
           ),
