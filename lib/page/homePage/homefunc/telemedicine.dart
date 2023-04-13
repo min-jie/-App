@@ -17,12 +17,12 @@ import '../list/passwordSetting.dart';
 void main() {
   runApp(const MaterialApp(
     title: 'Navigation Basics',
-    home: ReservePage(),
+    home: TelemedicinePage(),
   ));
 }
 
-class ReservePage extends StatelessWidget {
-  const ReservePage({super.key});
+class TelemedicinePage extends StatelessWidget {
+  const TelemedicinePage({super.key});
 
   @override
   Widget build(BuildContext context) {

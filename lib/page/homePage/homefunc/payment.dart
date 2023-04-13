@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application/page/homePage/bottomNav/hospitalized.dart';
 import 'package:flutter_application/page/homePage/bottomNav/message.dart';
@@ -14,15 +13,23 @@ import '../list/passwordSetting.dart';
 void main() {
   runApp(const MaterialApp(
     title: 'Navigation Basics',
-    home: MedicineManagePage(),
+    home: PaymentPage(),
   ));
 }
 
-class MedicineManagePage extends StatelessWidget {
-  const MedicineManagePage({super.key});
+class PaymentPage extends StatelessWidget {
+  const PaymentPage({super.key});
+
+// void _onItemTapped(int index) {
+//     setState(() {
+//       _selectedIndex = index;
+//     });
+//   }
 
   @override
   Widget build(BuildContext context) {
+    int currentPageIndex = 0; // 切換頁面用
+    int _selectedIndex = 0;
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(color: Color.fromRGBO(94, 153, 86, 1)),
@@ -251,11 +258,11 @@ class MedicineManagePage extends StatelessWidget {
                 height: 84.0,
                 child: ElevatedButton.icon(
                   icon: Icon(
-                    Icons.file_copy,
+                    Icons.payments,
                     size: 24.0,
                   ),
                   label: Text(
-                    '預約慢箋',
+                    '醫指付',
                     style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
                   ),
                   style: ElevatedButton.styleFrom(
@@ -291,7 +298,7 @@ class MedicineManagePage extends StatelessWidget {
                   ),
                   onPressed: () {},
                   child: Text(
-                    '藥物處方紀錄',
+                    '帳單查詢與繳費記錄',
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -315,7 +322,7 @@ class MedicineManagePage extends StatelessWidget {
                   ),
                   onPressed: () {},
                   child: Text(
-                    '藥品衛教',
+                    '預計費用試算',
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -339,7 +346,31 @@ class MedicineManagePage extends StatelessWidget {
                   ),
                   onPressed: () {},
                   child: Text(
-                    '藥物過敏註記',
+                    '欠費記錄提醒',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(88, 103, 86, 1)),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+              ),
+              SizedBox(
+                width: 350.0,
+                height: 63.0,
+                child: OutlinedButton(
+                  style: OutlinedButton.styleFrom(
+                    side: BorderSide(
+                        width: 2.0, color: Color.fromRGBO(145, 200, 137, 1)),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                  ),
+                  onPressed: () {},
+                  child: Text(
+                    '超商或其他支付連結',
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -353,6 +384,44 @@ class MedicineManagePage extends StatelessWidget {
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentPageIndex,
+        // onTap: (int index) {
+        //   setState(() {
+        //     currentPageIndex = index; //此處實現頁面跳轉，根據pageList的索引值跳轉到對應頁面
+        //   });
+        // },
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: '個人化',
+            backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.message),
+            label: '亞東訊息',
+            backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: '首頁',
+            backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.local_hospital),
+            label: '住院專區',
+            backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.heat_pump_sharp),
+            label: '便民服務',
+            backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+          ),
+        ],
+        selectedFontSize: 18,
+        unselectedItemColor: Color.fromRGBO(88, 103, 86, 1),
+        selectedItemColor: Color.fromRGBO(248, 177, 172, 1),
       ),
     );
   }

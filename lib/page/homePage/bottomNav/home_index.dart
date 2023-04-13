@@ -1,16 +1,19 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/my_flutter_app_icons.dart';
 import 'package:flutter_application/page/homePage/bottomNav/hospitalized.dart';
 import 'package:flutter_application/page/homePage/bottomNav/message.dart';
 import 'package:flutter_application/page/homePage/bottomNav/peopleService.dart';
 import 'package:flutter_application/page/homePage/bottomNav/personal.dart';
+import 'package:flutter_application/page/homePage/homefunc/medicineManage.dart';
 import 'package:flutter_application/page/homePage/list/accountSetting.dart';
 import 'package:flutter_application/page/homePage/list/appSetting.dart';
 import 'package:flutter_application/page/homePage/list/logout.dart';
 import 'package:flutter_application/page/homePage/list/passwordSetting.dart';
 import 'package:flutter_application/page/homePage/homefunc/reserve.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+
+import '../homefunc/check.dart';
+import '../homefunc/payment.dart';
+import '../homefunc/telemedicine.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -333,7 +336,6 @@ class _MyHomePageState extends State<MyHomePage> {
         selectedFontSize: 18,
         unselectedItemColor: Color.fromRGBO(88, 103, 86, 1),
         selectedItemColor: Color.fromRGBO(248, 177, 172, 1),
-//onTap: _onItemTapped,
       ),
     );
   }
@@ -409,67 +411,8 @@ class HomeContent extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const ReservePage()),
-            );
-          },
-        ),
-
-        // 衛教資訊
-        ElevatedButton.icon(
-          icon: Icon(
-            Icons.medical_information,
-            color: Color.fromRGBO(94, 153, 86, 1),
-            size: 35.0,
-          ),
-          label: Text(
-            '衛教資訊',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Color.fromRGBO(94, 153, 86, 1),
-            ),
-          ),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.white,
-            padding: EdgeInsets.only(left: 0),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0),
-            ),
-          ),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ReservePage()),
-            );
-          },
-        ),
-
-        // 醫療繳費
-        ElevatedButton.icon(
-          icon: Icon(
-            Icons.payments,
-            color: Color.fromRGBO(94, 153, 86, 1),
-            size: 35.0,
-          ),
-          label: Text(
-            '醫療繳費',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-              color: Color.fromRGBO(94, 153, 86, 1),
-            ),
-          ),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.white,
-            padding: EdgeInsets.only(left: 0),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0),
-            ),
-          ),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const ReservePage()),
+              MaterialPageRoute(
+                  builder: (context) => const MedicineManagePage()),
             );
           },
         ),
@@ -499,7 +442,69 @@ class HomeContent extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const ReservePage()),
+              MaterialPageRoute(
+                  builder: (context) => const ProgressCheckPage()),
+            );
+          },
+        ),
+
+        // 衛教資訊
+        ElevatedButton.icon(
+          icon: Icon(
+            Icons.medical_information,
+            color: Color.fromRGBO(94, 153, 86, 1),
+            size: 35.0,
+          ),
+          label: Text(
+            '衛教資訊',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Color.fromRGBO(94, 153, 86, 1),
+            ),
+          ),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.white,
+            padding: EdgeInsets.only(left: 0),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const MedicineManagePage()),
+            );
+          },
+        ),
+
+        // 醫療繳費
+        ElevatedButton.icon(
+          icon: Icon(
+            Icons.payments,
+            color: Color.fromRGBO(94, 153, 86, 1),
+            size: 35.0,
+          ),
+          label: Text(
+            '醫療繳費',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              color: Color.fromRGBO(94, 153, 86, 1),
+            ),
+          ),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.white,
+            padding: EdgeInsets.only(left: 0),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+          ),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const PaymentPage()),
             );
           },
         ),
@@ -529,7 +534,7 @@ class HomeContent extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const ReservePage()),
+              MaterialPageRoute(builder: (context) => const TelemedicinePage()),
             );
           },
         ),
