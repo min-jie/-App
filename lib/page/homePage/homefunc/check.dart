@@ -22,14 +22,37 @@ void main() {
   ));
 }
 
-final Uri _url = Uri.parse('https://www.femh.org.tw/visit/visit?Action=9');
+// 看診進度連結跳轉
+final Uri _url_clinic =
+    Uri.parse('https://www.femh.org.tw/visit/visit?Action=9');
 
-Future<void> _launchUrl() async {
-  if (!await launchUrl(_url)) {
-    throw Exception('Could not launch $_url');
+Future<void> _launchUrl_clinic() async {
+  if (!await launchUrl(_url_clinic)) {
+    throw Exception('Could not launch $_url_clinic');
   }
 }
 
+// 抽血進度連結跳轉
+final Uri _url_blood =
+    Uri.parse('https://www.femh.org.tw/visit/visit?Action=9&tab=tab2');
+
+Future<void> _launchUrl_blood() async {
+  if (!await launchUrl(_url_blood)) {
+    throw Exception('Could not launch $_url_blood');
+  }
+}
+
+// 領藥進度連結跳轉
+final Uri _url_medicine =
+    Uri.parse('https://www.femh.org.tw/visit/visit?Action=9&tab=tab3');
+
+Future<void> _launchUrl_medicine() async {
+  if (!await launchUrl(_url_medicine)) {
+    throw Exception('Could not launch $_url_blood');
+  }
+}
+
+// TabBarView
 class MyTabbedPage extends StatefulWidget {
   const MyTabbedPage({super.key});
   @override
@@ -338,7 +361,7 @@ class ProgressCheckPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                   ),
-                  onPressed: _launchUrl,
+                  onPressed: _launchUrl_clinic,
                 ),
               ),
               Padding(
@@ -372,13 +395,7 @@ class ProgressCheckPage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20.0),
                           ),
                         ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const DoctorRoute()),
-                          );
-                        },
+                        onPressed: _launchUrl_medicine,
                       ),
                     ),
                   ),
@@ -407,13 +424,7 @@ class ProgressCheckPage extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20.0),
                           ),
                         ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const DoctorRoute()),
-                          );
-                        },
+                        onPressed: _launchUrl_blood,
                       ),
                     ),
                   ),
@@ -433,13 +444,7 @@ class ProgressCheckPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const CancelRoute()),
-                    );
-                  },
+                  onPressed: _launchUrl_blood,
                   icon: Icon(
                     Icons.bed,
                     size: 24.0,
@@ -612,150 +617,6 @@ class ProgressCheckPage extends StatelessWidget {
                 padding: const EdgeInsets.all(50.0),
               ),
             ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-// 科別掛號
-class DepartRoute extends StatelessWidget {
-  const DepartRoute({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        iconTheme: IconThemeData(color: Color.fromRGBO(147, 200, 141, 1)),
-        backgroundColor: Color.fromRGBO(255, 255, 255, 1),
-        title: RichText(
-          textAlign: TextAlign.center,
-          text: TextSpan(
-            text: "科別掛號",
-            style: TextStyle(
-              fontSize: 20,
-              color: Color.fromRGBO(94, 153, 86, 1),
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-        ),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.only(left: 0),
-            backgroundColor:
-                Color.fromRGBO(83, 194, 141, 1), // Background color
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0),
-            ),
-          ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text(
-            'Go back!',
-            style: TextStyle(
-              fontSize: 20,
-              color: Color.fromRGBO(255, 255, 255, 1),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-// 醫師掛號
-class DoctorRoute extends StatelessWidget {
-  const DoctorRoute({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        iconTheme: IconThemeData(color: Color.fromRGBO(147, 200, 141, 1)),
-        backgroundColor: Color.fromRGBO(255, 255, 255, 1),
-        title: RichText(
-          textAlign: TextAlign.center,
-          text: TextSpan(
-            text: "醫師掛號",
-            style: TextStyle(
-              fontSize: 20,
-              color: Color.fromRGBO(94, 153, 86, 1),
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-        ),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.only(left: 0),
-            backgroundColor:
-                Color.fromRGBO(83, 194, 141, 1), // Background color
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0),
-            ),
-          ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text(
-            'Go back!',
-            style: TextStyle(
-              fontSize: 20,
-              color: Color.fromRGBO(255, 255, 255, 1),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-// 取消掛號
-class CancelRoute extends StatelessWidget {
-  const CancelRoute({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        iconTheme: IconThemeData(color: Color.fromRGBO(147, 200, 141, 1)),
-        backgroundColor: Color.fromRGBO(255, 255, 255, 1),
-        title: RichText(
-          textAlign: TextAlign.center,
-          text: TextSpan(
-            text: "取消掛號",
-            style: TextStyle(
-              fontSize: 20,
-              color: Color.fromRGBO(94, 153, 86, 1),
-              fontWeight: FontWeight.w700,
-            ),
-          ),
-        ),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.only(left: 0),
-            backgroundColor:
-                Color.fromRGBO(83, 194, 141, 1), // Background color
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0),
-            ),
-          ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text(
-            'Go back!',
-            style: TextStyle(
-              fontSize: 20,
-              color: Color.fromRGBO(255, 255, 255, 1),
-            ),
           ),
         ),
       ),
