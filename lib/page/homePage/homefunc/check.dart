@@ -21,6 +21,58 @@ void main() {
   ));
 }
 
+class MyTabbedPage extends StatefulWidget {
+  const MyTabbedPage({super.key});
+  @override
+  State<MyTabbedPage> createState() => _MyTabbedPageState();
+}
+
+class _MyTabbedPageState extends State<MyTabbedPage>
+    with SingleTickerProviderStateMixin {
+  static const List<Tab> myTabs = <Tab>[
+    Tab(text: 'LEFT'),
+    Tab(text: 'RIGHT'),
+  ];
+
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(vsync: this, length: myTabs.length);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        bottom: TabBar(
+          controller: _tabController,
+          tabs: myTabs,
+        ),
+      ),
+      body: TabBarView(
+        controller: _tabController,
+        children: myTabs.map((Tab tab) {
+          final String label = tab.text!.toLowerCase();
+          return Center(
+            child: Text(
+              'This is the $label tab',
+              style: const TextStyle(fontSize: 36),
+            ),
+          );
+        }).toList(),
+      ),
+    );
+  }
+}
+
 class ProgressCheckPage extends StatelessWidget {
   const ProgressCheckPage({super.key});
 
@@ -386,11 +438,11 @@ class ProgressCheckPage extends StatelessWidget {
                     );
                   },
                   icon: Icon(
-                    Icons.cancel,
+                    Icons.bed,
                     size: 24.0,
                   ),
                   label: Text(
-                    '取消掛號',
+                    '急診待床人數查詢',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                 ),

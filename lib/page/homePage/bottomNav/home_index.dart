@@ -12,6 +12,7 @@ import 'package:flutter_application/page/homePage/list/passwordSetting.dart';
 import 'package:flutter_application/page/homePage/homefunc/reserve.dart';
 
 import '../homefunc/check.dart';
+import '../homefunc/medInform.dart';
 import '../homefunc/payment.dart';
 import '../homefunc/telemedicine.dart';
 
@@ -473,8 +474,7 @@ class HomeContent extends StatelessWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                  builder: (context) => const MedicineManagePage()),
+              MaterialPageRoute(builder: (context) => const MedInformPage()),
             );
           },
         ),
