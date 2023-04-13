@@ -233,6 +233,9 @@ class _MedInformPageState extends State<MedInformPage>
         length: 3,
         child: Column(
           children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(3.0),
+            ),
             Container(
               constraints: BoxConstraints(maxHeight: 150.0),
               child: Material(
@@ -246,7 +249,7 @@ class _MedInformPageState extends State<MedInformPage>
                     },
                   ),
                   labelColor:
-                      Color.fromRGBO(94, 153, 86, 1), //<-- selected text color
+                      Color.fromRGBO(74, 90, 72, 1), //<-- selected text color
                   unselectedLabelColor: Color.fromRGBO(139, 181, 134, 1),
                   indicatorColor: Color.fromRGBO(94, 153, 86, 1),
                   tabs: [
@@ -258,19 +261,31 @@ class _MedInformPageState extends State<MedInformPage>
               ),
             ),
             Expanded(
-                child: ListView.separated(
-              padding: const EdgeInsets.all(8),
-              itemCount: entries.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Container(
-                  height: 50,
-                  color: Colors.amber[colorCodes[index]],
-                  child: Center(child: Text('Entry ${entries[index]}')),
-                );
-              },
-              separatorBuilder: (BuildContext context, int index) =>
-                  const Divider(),
-            )),
+              child: TabBarView(
+                //TabBarView 預設支援手勢滑動，若要禁止設定 NeverScrollableScrollPhysics
+                physics: NeverScrollableScrollPhysics(),
+                children: <Widget>[
+                  Center(
+                      child: ListView.separated(
+                    padding: const EdgeInsets.all(20),
+                    itemCount: entries.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return Container(
+                        alignment: Alignment.centerLeft,
+                        height: 50,
+                        color: Color.fromRGBO(234, 249, 232, 1),
+                        child: Center(child: Text('${entries[index]}')),
+                      );
+                    },
+                    separatorBuilder: (BuildContext context, int index) =>
+                        const Divider(),
+                  )),
+                  Center(child: Text('view2')),
+                  Center(child: Text('view3')),
+                ],
+              ),
+            ),
+            
           ],
         ),
       ),
@@ -278,5 +293,12 @@ class _MedInformPageState extends State<MedInformPage>
   }
 }
 
-final List<String> entries = <String>['A', 'B', 'C'];
-final List<int> colorCodes = <int>[600, 500, 100];
+final List<String> entries = <String>[
+  '「睡眠呼吸中止缺氧債」更精準預測心血',
+  '亞東COVID-19疫苗接種預定日程表',
+  '28歲得肺癌超崩潰標靶治療1年康復',
+  '28歲得肺癌超崩潰標靶治療1年康復',
+  '28歲得肺癌超崩潰標靶治療1年康復',
+  '老翁胸悶誤以為染新冠',
+  '老翁胸悶誤以為染新冠'
+];
