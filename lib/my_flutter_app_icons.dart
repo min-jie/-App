@@ -11,7 +11,7 @@
 ///      fonts:
 ///       - asset: fonts/MyFlutterApp.ttf
 ///
-/// 
+///
 /// * Entypo, Copyright (C) 2012 by Daniel Bruce
 ///         Author:    Daniel Bruce
 ///         License:   SIL (http://scripts.sil.org/OFL)
@@ -33,8 +33,14 @@ class MyFlutterApp {
   static const _kFontFam = 'MyFlutterApp';
   static const String? _kFontPkg = null;
 
-  static const IconData bell = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData user_md = IconData(0xf0f0, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData robot = IconData(0xf544, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData laptop_medical = IconData(0xf812, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData bell =
+      IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData user_md =
+      IconData(0xf0f0, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData robot =
+      IconData(0xf544, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData laptop_medical =
+      IconData(0xf812, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData arrow_alt_circle_right =
+      IconData(0xf35a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }
