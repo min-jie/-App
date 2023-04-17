@@ -52,6 +52,26 @@ Future<void> _launchUrl_medicine() async {
   }
 }
 
+// 身心障礙申請進度查詢
+final Uri _url_pmhandicapped =
+    Uri.parse('https://volunteer.femh.org.tw/websocialsearch/People/PsySearch');
+
+Future<void> _launchUrl_pmhandicapped() async {
+  if (!await launchUrl(_url_pmhandicapped)) {
+    throw Exception('Could not launch $_url_pmhandicapped');
+  }
+}
+
+// 身心障礙申請進度查詢
+final Uri _url_migrantworker =
+    Uri.parse('https://volunteer.femh.org.tw/websocialsearch/People/PsySearch');
+
+Future<void> _launchUrl_migrantworker() async {
+  if (!await launchUrl(_url_migrantworker)) {
+    throw Exception('Could not launch $_url_migrantworker');
+  }
+}
+
 // TabBarView
 class MyTabbedPage extends StatefulWidget {
   const MyTabbedPage({super.key});
@@ -480,7 +500,7 @@ class ProgressCheckPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: _launchUrl_pmhandicapped,
                   child: Text(
                     '身心障礙申請進度查詢',
                     style: TextStyle(
@@ -504,7 +524,7 @@ class ProgressCheckPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: _launchUrl_migrantworker,
                   child: Text(
                     '看護移工案件進度查詢',
                     style: TextStyle(
