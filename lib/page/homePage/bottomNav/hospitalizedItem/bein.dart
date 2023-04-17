@@ -72,7 +72,7 @@ class _BeinPageState extends State<BeinPage> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      '社會公益活動介紹',
+                      '住院環境介紹',
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -107,7 +107,42 @@ class _BeinPageState extends State<BeinPage> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      '社區護理服務',
+                      '治療計畫',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(88, 103, 86, 1)),
+                    ), // <-- Text
+                    SizedBox(
+                      width: 177,
+                    ),
+                    Icon(
+                        // <-- Icon
+                        MyFlutterApp.arrow_alt_circle_right,
+                        size: 24.0,
+                        color: Color.fromRGBO(255, 234, 156, 1)),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(330, 82),
+                  padding: EdgeInsets.only(left: 0),
+                  backgroundColor:
+                      Color.fromRGBO(255, 255, 255, 1), // Background color
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      '醫療團隊查詢',
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -142,42 +177,7 @@ class _BeinPageState extends State<BeinPage> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      '社區資源協助',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromRGBO(88, 103, 86, 1)),
-                    ), // <-- Text
-                    SizedBox(
-                      width: 140,
-                    ),
-                    Icon(
-                        // <-- Icon
-                        MyFlutterApp.arrow_alt_circle_right,
-                        size: 24.0,
-                        color: Color.fromRGBO(255, 234, 156, 1)),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-              ),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  fixedSize: const Size(330, 82),
-                  padding: EdgeInsets.only(left: 0),
-                  backgroundColor:
-                      Color.fromRGBO(255, 255, 255, 1), // Background color
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      '長照資源協助',
+                      '個人資料回報',
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -212,14 +212,84 @@ class _BeinPageState extends State<BeinPage> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      '滿意度問卷',
+                      '住院衛教',
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Color.fromRGBO(88, 103, 86, 1)),
                     ), // <-- Text
                     SizedBox(
-                      width: 163,
+                      width: 177,
+                    ),
+                    Icon(
+                        // <-- Icon
+                        MyFlutterApp.arrow_alt_circle_right,
+                        size: 24.0,
+                        color: Color.fromRGBO(255, 234, 156, 1)),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(330, 82),
+                  padding: EdgeInsets.only(left: 0),
+                  backgroundColor:
+                      Color.fromRGBO(255, 255, 255, 1), // Background color
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      '文件申請',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(88, 103, 86, 1)),
+                    ), // <-- Text
+                    SizedBox(
+                      width: 177,
+                    ),
+                    Icon(
+                        // <-- Icon
+                        MyFlutterApp.arrow_alt_circle_right,
+                        size: 24.0,
+                        color: Color.fromRGBO(255, 234, 156, 1)),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(330, 82),
+                  padding: EdgeInsets.only(left: 0),
+                  backgroundColor:
+                      Color.fromRGBO(255, 255, 255, 1), // Background color
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      '陪探病規定及申請',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(88, 103, 86, 1)),
+                    ), // <-- Text
+                    SizedBox(
+                      width: 97,
                     ),
                     Icon(
                         // <-- Icon
