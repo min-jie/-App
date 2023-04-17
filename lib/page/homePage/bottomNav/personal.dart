@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/my_flutter_app_icons.dart';
 import 'package:flutter_application/page/homePage/bottomNav/home_index.dart';
 import 'package:flutter_application/page/homePage/bottomNav/peopleService.dart';
+import 'package:flutter_application/page/homePage/bottomNav/personalItem/record_check.dart';
 
 import '../homefunc/medicineManage.dart';
 import '../list/accountSetting.dart';
@@ -92,7 +93,6 @@ class _PersonalPageState extends State<PersonalPage> {
                 padding: const EdgeInsets.all(20.0),
               ),
               ElevatedButton(
-                onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   fixedSize: const Size(330, 82),
                   padding: EdgeInsets.only(left: 0),
@@ -122,6 +122,15 @@ class _PersonalPageState extends State<PersonalPage> {
                         color: Color.fromRGBO(96, 181, 125, 1)),
                   ],
                 ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const RecordCkeckPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               Padding(
                 padding: const EdgeInsets.all(15.0),
