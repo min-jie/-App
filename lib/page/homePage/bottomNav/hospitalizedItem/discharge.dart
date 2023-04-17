@@ -72,14 +72,14 @@ class _DischargePageState extends State<DischargePage> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      '社會公益活動介紹',
+                      '出院需求申請',
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Color.fromRGBO(88, 103, 86, 1)),
                     ), // <-- Text
                     SizedBox(
-                      width: 100,
+                      width: 133,
                     ),
                     Icon(
                         // <-- Icon
@@ -107,7 +107,42 @@ class _DischargePageState extends State<DischargePage> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      '社區護理服務',
+                      '回診及相關檢查日期',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(88, 103, 86, 1)),
+                    ), // <-- Text
+                    SizedBox(
+                      width: 77,
+                    ),
+                    Icon(
+                        // <-- Icon
+                        MyFlutterApp.arrow_alt_circle_right,
+                        size: 24.0,
+                        color: Color.fromRGBO(255, 234, 156, 1)),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(330, 82),
+                  padding: EdgeInsets.only(left: 0),
+                  backgroundColor:
+                      Color.fromRGBO(255, 255, 255, 1), // Background color
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      '出院衛教推播',
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -142,84 +177,14 @@ class _DischargePageState extends State<DischargePage> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      '社區資源協助',
+                      '出院滿意度調查',
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Color.fromRGBO(88, 103, 86, 1)),
                     ), // <-- Text
                     SizedBox(
-                      width: 140,
-                    ),
-                    Icon(
-                        // <-- Icon
-                        MyFlutterApp.arrow_alt_circle_right,
-                        size: 24.0,
-                        color: Color.fromRGBO(255, 234, 156, 1)),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-              ),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  fixedSize: const Size(330, 82),
-                  padding: EdgeInsets.only(left: 0),
-                  backgroundColor:
-                      Color.fromRGBO(255, 255, 255, 1), // Background color
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      '長照資源協助',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromRGBO(88, 103, 86, 1)),
-                    ), // <-- Text
-                    SizedBox(
-                      width: 143,
-                    ),
-                    Icon(
-                        // <-- Icon
-                        MyFlutterApp.arrow_alt_circle_right,
-                        size: 24.0,
-                        color: Color.fromRGBO(255, 234, 156, 1)),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-              ),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  fixedSize: const Size(330, 82),
-                  padding: EdgeInsets.only(left: 0),
-                  backgroundColor:
-                      Color.fromRGBO(255, 255, 255, 1), // Background color
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      '滿意度問卷',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromRGBO(88, 103, 86, 1)),
-                    ), // <-- Text
-                    SizedBox(
-                      width: 163,
+                      width: 123,
                     ),
                     Icon(
                         // <-- Icon
