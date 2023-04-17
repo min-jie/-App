@@ -1,30 +1,16 @@
-// 個人化
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/my_flutter_app_icons.dart';
-import 'package:flutter_application/page/homePage/bottomNav/home_index.dart';
-import 'package:flutter_application/page/homePage/bottomNav/messageItem/hospital_Intro.dart';
-import 'package:flutter_application/page/homePage/bottomNav/peopleService.dart';
-import 'package:flutter_application/page/homePage/bottomNav/personal.dart';
 
-import '../list/accountSetting.dart';
-import '../list/appSetting.dart';
-import '../list/logout.dart';
-import '../list/passwordSetting.dart';
-import 'hospitalized.dart';
-import 'messageItem/public_welfare.dart';
-
-class MessagePage extends StatefulWidget {
-  const MessagePage({super.key, required this.title});
+class PublicWelfarePage extends StatefulWidget {
+  const PublicWelfarePage({super.key, required this.title});
 
   final String title;
 
   @override
-  State<MessagePage> createState() => _MessagePageState();
+  State<PublicWelfarePage> createState() => _PublicWelfarePageState();
 }
 
-class _MessagePageState extends State<MessagePage> {
+class _PublicWelfarePageState extends State<PublicWelfarePage> {
   int _selectedIndex = 0;
   int tappedIndex = 0;
   int crossAxisCellCount = 4;
@@ -47,17 +33,17 @@ class _MessagePageState extends State<MessagePage> {
     final List<Widget> aboutBoxChildren = <Widget>[];
 
     return Scaffold(
-      backgroundColor: Color.fromRGBO(219, 242, 216, 1),
+      backgroundColor: Color.fromRGBO(243, 243, 243, 1),
       appBar: AppBar(
         iconTheme: IconThemeData(color: Color.fromRGBO(255, 255, 255, 1)),
-        backgroundColor: Color.fromRGBO(151, 214, 142, 1),
+        backgroundColor: Color.fromRGBO(120, 182, 112, 1),
         title: RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
-            text: "亞東訊息",
+            text: "社會公益",
             style: TextStyle(
               fontSize: 20,
-              color: Color.fromRGBO(56, 129, 47, 1),
+              color: Color.fromRGBO(255, 255, 255, 1),
               fontWeight: FontWeight.w700,
             ),
           ),
@@ -72,6 +58,7 @@ class _MessagePageState extends State<MessagePage> {
                 padding: const EdgeInsets.all(20.0),
               ),
               ElevatedButton(
+                onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   fixedSize: const Size(330, 82),
                   padding: EdgeInsets.only(left: 0),
@@ -85,36 +72,28 @@ class _MessagePageState extends State<MessagePage> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      '醫院簡介',
+                      '社會公益活動介紹',
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Color.fromRGBO(88, 103, 86, 1)),
                     ), // <-- Text
                     SizedBox(
-                      width: 137,
+                      width: 100,
                     ),
                     Icon(
                         // <-- Icon
                         MyFlutterApp.arrow_alt_circle_right,
                         size: 24.0,
-                        color: Color.fromRGBO(96, 181, 125, 1)),
+                        color: Color.fromRGBO(255, 234, 156, 1)),
                   ],
                 ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const HospitalIntroPage(
-                              title: '',
-                            )),
-                  );
-                },
               ),
               Padding(
-                padding: const EdgeInsets.all(15.0),
+                padding: const EdgeInsets.all(10.0),
               ),
               ElevatedButton(
+                onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   fixedSize: const Size(330, 82),
                   padding: EdgeInsets.only(left: 0),
@@ -128,37 +107,130 @@ class _MessagePageState extends State<MessagePage> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      '社會公益',
+                      '社區護理服務',
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Color.fromRGBO(88, 103, 86, 1)),
                     ), // <-- Text
                     SizedBox(
-                      width: 137,
+                      width: 140,
                     ),
                     Icon(
                         // <-- Icon
                         MyFlutterApp.arrow_alt_circle_right,
                         size: 24.0,
-                        color: Color.fromRGBO(96, 181, 125, 1)),
+                        color: Color.fromRGBO(255, 234, 156, 1)),
                   ],
                 ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const PublicWelfarePage(
-                              title: '',
-                            )),
-                  );
-                },
               ),
               Padding(
-                padding: const EdgeInsets.all(15.0),
+                padding: const EdgeInsets.all(10.0),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(330, 82),
+                  padding: EdgeInsets.only(left: 0),
+                  backgroundColor:
+                      Color.fromRGBO(255, 255, 255, 1), // Background color
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      '社區資源協助',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(88, 103, 86, 1)),
+                    ), // <-- Text
+                    SizedBox(
+                      width: 140,
+                    ),
+                    Icon(
+                        // <-- Icon
+                        MyFlutterApp.arrow_alt_circle_right,
+                        size: 24.0,
+                        color: Color.fromRGBO(255, 234, 156, 1)),
+                  ],
+                ),
               ),
               Padding(
-                padding: const EdgeInsets.all(50.0),
+                padding: const EdgeInsets.all(10.0),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(330, 82),
+                  padding: EdgeInsets.only(left: 0),
+                  backgroundColor:
+                      Color.fromRGBO(255, 255, 255, 1), // Background color
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      '長照資源協助',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(88, 103, 86, 1)),
+                    ), // <-- Text
+                    SizedBox(
+                      width: 143,
+                    ),
+                    Icon(
+                        // <-- Icon
+                        MyFlutterApp.arrow_alt_circle_right,
+                        size: 24.0,
+                        color: Color.fromRGBO(255, 234, 156, 1)),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(330, 82),
+                  padding: EdgeInsets.only(left: 0),
+                  backgroundColor:
+                      Color.fromRGBO(255, 255, 255, 1), // Background color
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      '滿意度問卷',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(88, 103, 86, 1)),
+                    ), // <-- Text
+                    SizedBox(
+                      width: 163,
+                    ),
+                    Icon(
+                        // <-- Icon
+                        MyFlutterApp.arrow_alt_circle_right,
+                        size: 24.0,
+                        color: Color.fromRGBO(255, 234, 156, 1)),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(55.0),
               ),
             ],
           ),
