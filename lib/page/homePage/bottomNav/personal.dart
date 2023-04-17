@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/my_flutter_app_icons.dart';
 import 'package:flutter_application/page/homePage/bottomNav/home_index.dart';
 import 'package:flutter_application/page/homePage/bottomNav/peopleService.dart';
+import 'package:flutter_application/page/homePage/bottomNav/personalItem/health_dairy.dart';
 import 'package:flutter_application/page/homePage/bottomNav/personalItem/record_check.dart';
+import 'package:flutter_application/page/homePage/bottomNav/personalItem/remind.dart';
 
 import '../homefunc/medicineManage.dart';
 import '../list/accountSetting.dart';
@@ -32,28 +34,6 @@ class _PersonalPageState extends State<PersonalPage> {
 
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      '個人化',
-      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-    ),
-    Text(
-      '亞東訊息',
-      style: optionStyle,
-    ),
-    Text(
-      '首頁',
-      style: optionStyle,
-    ),
-    Text(
-      '住院專區',
-      style: optionStyle,
-    ),
-    Text(
-      '便民服務',
-      style: optionStyle,
-    ),
-  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -136,7 +116,6 @@ class _PersonalPageState extends State<PersonalPage> {
                 padding: const EdgeInsets.all(15.0),
               ),
               ElevatedButton(
-                onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   fixedSize: const Size(330, 82),
                   padding: EdgeInsets.only(left: 0),
@@ -166,12 +145,20 @@ class _PersonalPageState extends State<PersonalPage> {
                         color: Color.fromRGBO(96, 181, 125, 1)),
                   ],
                 ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const HealthDairyPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               Padding(
                 padding: const EdgeInsets.all(15.0),
               ),
               ElevatedButton(
-                onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   fixedSize: const Size(330, 82),
                   padding: EdgeInsets.only(left: 0),
@@ -201,6 +188,15 @@ class _PersonalPageState extends State<PersonalPage> {
                         color: Color.fromRGBO(96, 181, 125, 1)),
                   ],
                 ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const RemindPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               Padding(
                 padding: const EdgeInsets.all(15.0),
