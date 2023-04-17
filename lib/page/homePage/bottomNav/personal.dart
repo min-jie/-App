@@ -5,6 +5,7 @@ import 'package:flutter_application/my_flutter_app_icons.dart';
 import 'package:flutter_application/page/homePage/bottomNav/home_index.dart';
 import 'package:flutter_application/page/homePage/bottomNav/peopleService.dart';
 import 'package:flutter_application/page/homePage/bottomNav/personalItem/health_dairy.dart';
+import 'package:flutter_application/page/homePage/bottomNav/personalItem/patient_parti.dart';
 import 'package:flutter_application/page/homePage/bottomNav/personalItem/record_check.dart';
 import 'package:flutter_application/page/homePage/bottomNav/personalItem/remind.dart';
 
@@ -202,7 +203,6 @@ class _PersonalPageState extends State<PersonalPage> {
                 padding: const EdgeInsets.all(15.0),
               ),
               ElevatedButton(
-                onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   fixedSize: const Size(330, 82),
                   padding: EdgeInsets.only(left: 0),
@@ -232,12 +232,20 @@ class _PersonalPageState extends State<PersonalPage> {
                         color: Color.fromRGBO(96, 181, 125, 1)),
                   ],
                 ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PatientPartiPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               Padding(
                 padding: const EdgeInsets.all(15.0),
               ),
               ElevatedButton(
-                onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   fixedSize: const Size(330, 82),
                   padding: EdgeInsets.only(left: 0),
@@ -267,6 +275,15 @@ class _PersonalPageState extends State<PersonalPage> {
                         color: Color.fromRGBO(96, 181, 125, 1)),
                   ],
                 ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const RemindPage(
+                              title: '',
+                            )),
+                  );
+                },
               ),
               Padding(
                 padding: const EdgeInsets.all(50.0),
