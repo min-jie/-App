@@ -13,6 +13,8 @@ import '../list/appSetting.dart';
 import '../list/logout.dart';
 import '../list/passwordSetting.dart';
 import 'hospitalized.dart';
+import 'hospitalizedItem/bein.dart';
+import 'hospitalizedItem/discharge.dart';
 import 'messageItem/public_welfare.dart';
 
 class HospitalizedPage extends StatefulWidget {
@@ -105,7 +107,7 @@ class _HospitalizedPageState extends State<HospitalizedPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const HospitalIntroPage(
+                        builder: (context) => const BeinPage(
                               title: '',
                             )),
                   );
@@ -148,7 +150,7 @@ class _HospitalizedPageState extends State<HospitalizedPage> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const PublicWelfarePage(
+                        builder: (context) => const DischargePage(
                               title: '',
                             )),
                   );
