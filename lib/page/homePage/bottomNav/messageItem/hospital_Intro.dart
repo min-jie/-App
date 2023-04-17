@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/my_flutter_app_icons.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HospitalIntroPage extends StatefulWidget {
   const HospitalIntroPage({super.key, required this.title});
@@ -8,6 +9,25 @@ class HospitalIntroPage extends StatefulWidget {
 
   @override
   State<HospitalIntroPage> createState() => _HospitalIntroPageState();
+}
+
+// 醫院簡介連結跳轉
+final Uri _url_hospitalIntro =
+    Uri.parse('https://www.femh.org.tw/intro/intro?Action=3');
+
+Future<void> _launchUrl_hospitalIntro() async {
+  if (!await launchUrl(_url_hospitalIntro)) {
+    throw Exception('Could not launch $_url_hospitalIntro');
+  }
+}
+
+// 醫師介紹連結跳轉
+final Uri _url_doctorIntro = Uri.parse('https://www.femh.org.tw/doctor/doctor');
+
+Future<void> _launchUrl_doctorIntro() async {
+  if (!await launchUrl(_url_doctorIntro)) {
+    throw Exception('Could not launch $_url_doctorIntro');
+  }
 }
 
 class _HospitalIntroPageState extends State<HospitalIntroPage> {
@@ -58,7 +78,6 @@ class _HospitalIntroPageState extends State<HospitalIntroPage> {
                 padding: const EdgeInsets.all(20.0),
               ),
               ElevatedButton(
-                onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   fixedSize: const Size(330, 82),
                   padding: EdgeInsets.only(left: 0),
@@ -88,12 +107,12 @@ class _HospitalIntroPageState extends State<HospitalIntroPage> {
                         color: Color.fromRGBO(255, 234, 156, 1)),
                   ],
                 ),
+                onPressed: _launchUrl_hospitalIntro, // 醫院簡介連結跳轉
               ),
               Padding(
                 padding: const EdgeInsets.all(10.0),
               ),
               ElevatedButton(
-                onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   fixedSize: const Size(330, 82),
                   padding: EdgeInsets.only(left: 0),
@@ -107,7 +126,7 @@ class _HospitalIntroPageState extends State<HospitalIntroPage> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      '醫師簡介',
+                      '醫師介紹',
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -123,6 +142,7 @@ class _HospitalIntroPageState extends State<HospitalIntroPage> {
                         color: Color.fromRGBO(255, 234, 156, 1)),
                   ],
                 ),
+                onPressed: _launchUrl_doctorIntro, // 醫師介紹連結跳轉
               ),
               Padding(
                 padding: const EdgeInsets.all(10.0),
