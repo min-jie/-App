@@ -79,7 +79,7 @@ class _BeinPageState extends State<BeinPage> {
                           color: Color.fromRGBO(88, 103, 86, 1)),
                     ), // <-- Text
                     SizedBox(
-                      width: 100,
+                      width: 140,
                     ),
                     Icon(
                         // <-- Icon

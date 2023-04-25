@@ -94,7 +94,7 @@ class _HospitalizedPageState extends State<HospitalizedPage> {
                           color: Color.fromRGBO(88, 103, 86, 1)),
                     ), // <-- Text
                     SizedBox(
-                      width: 137,
+                      width: 177,
                     ),
                     Icon(
                         // <-- Icon
@@ -137,7 +137,7 @@ class _HospitalizedPageState extends State<HospitalizedPage> {
                           color: Color.fromRGBO(88, 103, 86, 1)),
                     ), // <-- Text
                     SizedBox(
-                      width: 137,
+                      width: 177,
                     ),
                     Icon(
                         // <-- Icon
