@@ -159,6 +159,46 @@ class _HospitalizedPageState extends State<HospitalizedPage> {
               Padding(
                 padding: const EdgeInsets.all(15.0),
               ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(330, 82),
+                  padding: EdgeInsets.only(left: 0),
+                  backgroundColor:
+                      Color.fromRGBO(255, 255, 255, 1), // Background color
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      '留言區',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(88, 103, 86, 1)),
+                    ), // <-- Text
+                    SizedBox(
+                      width: 177,
+                    ),
+                    Icon(
+                        // <-- Icon
+                        MyFlutterApp.arrow_alt_circle_right,
+                        size: 24.0,
+                        color: Color.fromRGBO(96, 181, 125, 1)),
+                  ],
+                ),
+                onPressed: () {
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //       builder: (context) => const DischargePage(
+                  //             title: '',
+                  //           )),
+                  // );
+                },
+              ),
               Padding(
                 padding: const EdgeInsets.all(50.0),
               ),
