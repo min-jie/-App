@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/my_flutter_app_icons.dart';
 import 'package:flutter_application/page/homePage/bottomNav/home_index.dart';
 import 'package:flutter_application/page/homePage/bottomNav/peopleServiceItem/apply.dart';
+import 'package:flutter_application/page/homePage/bottomNav/peopleServiceItem/shoppingArea.dart';
 import 'package:flutter_application/page/homePage/bottomNav/personal.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -30,31 +31,6 @@ class _PeopleServicePageState extends State<PeopleServicePage> {
   int crossAxisCellCount = 4;
   int mainAxisCellCount = 4;
   final TextEditingController _searchController = TextEditingController();
-
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      '個人化',
-      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-    ),
-    Text(
-      '亞東訊息',
-      style: optionStyle,
-    ),
-    Text(
-      '首頁',
-      style: optionStyle,
-    ),
-    Text(
-      '住院專區',
-      style: optionStyle,
-    ),
-    Text(
-      '便民服務',
-      style: optionStyle,
-    ),
-  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -209,13 +185,13 @@ class _PeopleServicePageState extends State<PeopleServicePage> {
                   ],
                 ),
                 onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //       builder: (context) => const RemindPage(
-                  //             title: '',
-                  //           )),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ShoppingPage(
+                              title: '',
+                            )),
+                  );
                 },
               ),
               Padding(
