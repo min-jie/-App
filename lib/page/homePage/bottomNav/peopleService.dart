@@ -1,20 +1,9 @@
 // 便民服務
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/my_flutter_app_icons.dart';
-import 'package:flutter_application/page/homePage/bottomNav/home_index.dart';
 import 'package:flutter_application/page/homePage/bottomNav/peopleServiceItem/apply.dart';
 import 'package:flutter_application/page/homePage/bottomNav/peopleServiceItem/shoppingArea.dart';
-import 'package:flutter_application/page/homePage/bottomNav/personal.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-
-import '../list/accountSetting.dart';
-import '../list/appSetting.dart';
-import '../list/logout.dart';
-import '../list/passwordSetting.dart';
-import 'hospitalized.dart';
-import 'message.dart';
 
 class PeopleServicePage extends StatefulWidget {
   const PeopleServicePage({super.key, required this.title});
