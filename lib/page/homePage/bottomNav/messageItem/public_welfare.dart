@@ -195,41 +195,6 @@ class _PublicWelfarePageState extends State<PublicWelfarePage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(10.0),
-              ),
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  fixedSize: const Size(330, 82),
-                  padding: EdgeInsets.only(left: 0),
-                  backgroundColor:
-                      Color.fromRGBO(255, 255, 255, 1), // Background color
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      '滿意度問卷',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromRGBO(88, 103, 86, 1)),
-                    ), // <-- Text
-                    SizedBox(
-                      width: 163,
-                    ),
-                    Icon(
-                        // <-- Icon
-                        MyFlutterApp.arrow_alt_circle_right,
-                        size: 24.0,
-                        color: Color.fromRGBO(255, 234, 156, 1)),
-                  ],
-                ),
-              ),
-              Padding(
                 padding: const EdgeInsets.all(55.0),
               ),
             ],
