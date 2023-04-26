@@ -22,9 +22,6 @@ class _RemindPageState extends State<RemindPage> {
 
   final TextEditingController _searchController = TextEditingController();
 
-  bool isAppleChecked = false;
-  bool isBananaChecked = false;
-  bool isCherryChecked = false;
   bool Clinic_Reminded = false; // 門診提醒
   bool StopClinic_Reminded = false; // 停診提醒
   bool Check_Reminded = false; // 檢查提醒
