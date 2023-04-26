@@ -76,14 +76,119 @@ class _RecordCkeckPageState extends State<RecordCkeckPage> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      '個人資訊維護區與登出',
+                      '訊息紀錄',
                       style: TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
                           color: Color.fromRGBO(88, 103, 86, 1)),
                     ), // <-- Text
                     SizedBox(
-                      width: 51,
+                      width: 173,
+                    ),
+                    Icon(
+                        // <-- Icon
+                        MyFlutterApp.arrow_alt_circle_right,
+                        size: 24.0,
+                        color: Color.fromRGBO(255, 234, 156, 1)),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(330, 82),
+                  padding: EdgeInsets.only(left: 0),
+                  backgroundColor:
+                      Color.fromRGBO(255, 255, 255, 1), // Background color
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      '亞東就診及領藥紀錄',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(88, 103, 86, 1)),
+                    ), // <-- Text
+                    SizedBox(
+                      width: 77,
+                    ),
+                    Icon(
+                        // <-- Icon
+                        MyFlutterApp.arrow_alt_circle_right,
+                        size: 24.0,
+                        color: Color.fromRGBO(255, 234, 156, 1)),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(330, 82),
+                  padding: EdgeInsets.only(left: 0),
+                  backgroundColor:
+                      Color.fromRGBO(255, 255, 255, 1), // Background color
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      '檢查單查詢',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(88, 103, 86, 1)),
+                    ), // <-- Text
+                    SizedBox(
+                      width: 153,
+                    ),
+                    Icon(
+                        // <-- Icon
+                        MyFlutterApp.arrow_alt_circle_right,
+                        size: 24.0,
+                        color: Color.fromRGBO(255, 234, 156, 1)),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(330, 82),
+                  padding: EdgeInsets.only(left: 0),
+                  backgroundColor:
+                      Color.fromRGBO(255, 255, 255, 1), // Background color
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      '個人資訊維護區',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(88, 103, 86, 1)),
+                    ), // <-- Text
+                    SizedBox(
+                      width: 113,
                     ),
                     Icon(
                         // <-- Icon

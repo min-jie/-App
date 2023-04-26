@@ -598,7 +598,7 @@ class ProgressCheckPage extends StatelessWidget {
                   ),
                   onPressed: () {},
                   child: Text(
-                    '檢查報告進度',
+                    '檢查報告查詢',
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
