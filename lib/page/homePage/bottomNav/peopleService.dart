@@ -65,30 +65,12 @@ class _PeopleServicePageState extends State<PeopleServicePage> {
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
     final TextStyle textStyle = theme.textTheme.bodyMedium!;
-    final List<Widget> aboutBoxChildren = <Widget>[
-      const SizedBox(height: 24),
-      RichText(
-        text: TextSpan(
-          children: <TextSpan>[
-            TextSpan(
-                style: textStyle,
-                text: "Flutter is Googe's UI toolkit for building beautiful, "
-                    'natively compiled applications for mobile, web, and desktop'
-                    'from a single codebase. Learn more about Flutter at '),
-            TextSpan(
-                style: textStyle.copyWith(color: theme.colorScheme.primary),
-                text: 'https://flutter.dev'),
-            TextSpan(style: textStyle, text: '.'),
-          ],
-        ),
-      ),
-    ];
 
     return Scaffold(
       backgroundColor: Color.fromRGBO(209, 235, 205, 1),
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Color.fromRGBO(56, 129, 47, 1)),
-        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Color.fromRGBO(255, 255, 255, 1)),
+        backgroundColor: Color.fromRGBO(151, 214, 142, 1),
         title: RichText(
           textAlign: TextAlign.center,
           text: TextSpan(
@@ -100,217 +82,289 @@ class _PeopleServicePageState extends State<PeopleServicePage> {
             ),
           ),
         ),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(
-              MyFlutterApp.bell,
-              color: Color.fromRGBO(56, 129, 47, 1),
-            ),
-            onPressed: () {
-              // do something
-            },
-          )
-        ],
       ),
-      drawer: Drawer(
-        child: Container(
-          color: Color.fromARGB(255, 255, 255, 255), //<-- SEE HERE
-          child: ListView(
-            children: <Widget>[
-              const SizedBox(
-                height: 120, // To change the height of DrawerHeader
-                width: double.infinity,
-                child: DrawerHeader(
-                  decoration: BoxDecoration(
-                    color: Color.fromRGBO(72, 156, 61, 1),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(330, 82),
+                  padding: EdgeInsets.only(left: 0),
+                  backgroundColor:
+                      Color.fromRGBO(255, 255, 255, 1), // Background color
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
-                  child: Text(
-                    '亞東紀念醫院',
-                    style: TextStyle(color: Colors.white),
+                ),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      '各項申請',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(88, 103, 86, 1)),
+                    ), // <-- Text
+                    SizedBox(
+                      width: 137,
+                    ),
+                    Icon(
+                        // <-- Icon
+                        MyFlutterApp.arrow_alt_circle_right,
+                        size: 24.0,
+                        color: Color.fromRGBO(96, 181, 125, 1)),
+                  ],
+                ),
+                onPressed: () {
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //       builder: (context) => const RecordCkeckPage(
+                  //             title: '',
+                  //           )),
+                  // );
+                },
+              ),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(330, 82),
+                  padding: EdgeInsets.only(left: 0),
+                  backgroundColor:
+                      Color.fromRGBO(255, 255, 255, 1), // Background color
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
                   ),
                 ),
-              ),
-              ListTile(
-                title: const Text(
-                  '首頁',
-                  style: TextStyle(color: Color.fromRGBO(128, 136, 127, 1)),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      '積點回饋',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(88, 103, 86, 1)),
+                    ), // <-- Text
+                    SizedBox(
+                      width: 137,
+                    ),
+                    Icon(
+                        // <-- Icon
+                        MyFlutterApp.arrow_alt_circle_right,
+                        size: 24.0,
+                        color: Color.fromRGBO(96, 181, 125, 1)),
+                  ],
                 ),
-                leading: const Icon(
-                  Icons.home,
-                  color: Color.fromRGBO(128, 136, 127, 1),
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const MyHomePage(
-                              title: '',
-                            )),
-                  );
+                onPressed: () {
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //       builder: (context) => const HealthDairyPage(
+                  //             title: '',
+                  //           )),
+                  // );
                 },
               ),
-              ListTile(
-                title: const Text(
-                  '個人化',
-                  style: TextStyle(color: Color.fromRGBO(128, 136, 127, 1)),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(330, 82),
+                  padding: EdgeInsets.only(left: 0),
+                  backgroundColor:
+                      Color.fromRGBO(255, 255, 255, 1), // Background color
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
                 ),
-                leading: const Icon(
-                  Icons.person,
-                  color: Color.fromRGBO(128, 136, 127, 1),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      '購物專區',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(88, 103, 86, 1)),
+                    ), // <-- Text
+                    SizedBox(
+                      width: 137,
+                    ),
+                    Icon(
+                        // <-- Icon
+                        MyFlutterApp.arrow_alt_circle_right,
+                        size: 24.0,
+                        color: Color.fromRGBO(96, 181, 125, 1)),
+                  ],
                 ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const PersonalPage(
-                              title: '',
-                            )),
-                  );
+                onPressed: () {
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //       builder: (context) => const RemindPage(
+                  //             title: '',
+                  //           )),
+                  // );
                 },
               ),
-              ListTile(
-                title: const Text(
-                  '亞東訊息',
-                  style: TextStyle(color: Color.fromRGBO(128, 136, 127, 1)),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(330, 82),
+                  padding: EdgeInsets.only(left: 0),
+                  backgroundColor:
+                      Color.fromRGBO(255, 255, 255, 1), // Background color
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
                 ),
-                leading: const Icon(
-                  Icons.message,
-                  color: Color.fromRGBO(128, 136, 127, 1),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    RichText(
+                      text: TextSpan(
+                        text: '快速通關護照\n',
+                        children: [
+                          TextSpan(
+                            text: '產生QR Code',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500,
+                              color: Color.fromRGBO(178, 220, 200, 1),
+                            ),
+                          ),
+                        ],
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(88, 103, 86, 1),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 103,
+                    ),
+                    Icon(
+                        // <-- Icon
+                        MyFlutterApp.arrow_alt_circle_right,
+                        size: 24.0,
+                        color: Color.fromRGBO(96, 181, 125, 1)),
+                  ],
                 ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const MessagePage(
-                              title: '',
-                            )),
-                  );
+                onPressed: () {
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //       builder: (context) => const PatientPartiPage(
+                  //             title: '',
+                  //           )),
+                  // );
                 },
               ),
-              ListTile(
-                title: const Text(
-                  '住院專區',
-                  style: TextStyle(color: Color.fromRGBO(128, 136, 127, 1)),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(330, 82),
+                  padding: EdgeInsets.only(left: 0),
+                  backgroundColor:
+                      Color.fromRGBO(255, 255, 255, 1), // Background color
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
                 ),
-                leading: const Icon(
-                  Icons.local_hospital,
-                  color: Color.fromRGBO(128, 136, 127, 1),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      '輔具租借預約',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(88, 103, 86, 1)),
+                    ), // <-- Text
+                    SizedBox(
+                      width: 103,
+                    ),
+                    Icon(
+                        // <-- Icon
+                        MyFlutterApp.arrow_alt_circle_right,
+                        size: 24.0,
+                        color: Color.fromRGBO(96, 181, 125, 1)),
+                  ],
                 ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const HospitalizedPage(
-                              title: '',
-                            )),
-                  );
+                onPressed: () {
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //       builder: (context) => const RemindPage(
+                  //             title: '',
+                  //           )),
+                  // );
                 },
               ),
-              ListTile(
-                title: const Text(
-                  '便民服務',
-                  style: TextStyle(color: Color.fromRGBO(128, 136, 127, 1)),
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size(330, 82),
+                  padding: EdgeInsets.only(left: 0),
+                  backgroundColor:
+                      Color.fromRGBO(255, 255, 255, 1), // Background color
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
                 ),
-                leading: const Icon(
-                  Icons.heat_pump_sharp,
-                  color: Color.fromRGBO(128, 136, 127, 1),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      '留言區',
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromRGBO(88, 103, 86, 1)),
+                    ), // <-- Text
+                    SizedBox(
+                      width: 167,
+                    ),
+                    Icon(
+                        // <-- Icon
+                        MyFlutterApp.arrow_alt_circle_right,
+                        size: 24.0,
+                        color: Color.fromRGBO(96, 181, 125, 1)),
+                  ],
                 ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const PeopleServicePage(
-                              title: '',
-                            )),
-                  );
+                onPressed: () {
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //       builder: (context) => const RemindPage(
+                  //             title: '',
+                  //           )),
+                  // );
                 },
               ),
-              ListTile(
-                title: const Text(
-                  '帳號設定',
-                  style: TextStyle(color: Color.fromRGBO(128, 136, 127, 1)),
-                ),
-                leading: const Icon(
-                  Icons.account_balance,
-                  color: Color.fromRGBO(128, 136, 127, 1),
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const AccountSettingPage(
-                              title: '',
-                            )),
-                  );
-                },
-              ),
-              ListTile(
-                title: const Text(
-                  '程式設定',
-                  style: TextStyle(color: Color.fromRGBO(128, 136, 127, 1)),
-                ),
-                leading: const Icon(
-                  Icons.code,
-                  color: Color.fromRGBO(128, 136, 127, 1),
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const AppSettingPage(
-                              title: '',
-                            )),
-                  );
-                },
-              ),
-              ListTile(
-                title: const Text(
-                  '設定密碼',
-                  style: TextStyle(color: Color.fromRGBO(128, 136, 127, 1)),
-                ),
-                leading: const Icon(
-                  Icons.security,
-                  color: Color.fromRGBO(128, 136, 127, 1),
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const PasswordSettingPage(
-                              title: '',
-                            )),
-                  );
-                },
-              ),
-              ListTile(
-                title: const Text(
-                  '登出',
-                  style: TextStyle(color: Color.fromRGBO(128, 136, 127, 1)),
-                ),
-                leading: const Icon(
-                  Icons.logout,
-                  color: Color.fromRGBO(128, 136, 127, 1),
-                ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const LogoutPage(
-                              title: '',
-                            )),
-                  );
-                },
+              Padding(
+                padding: const EdgeInsets.all(50.0),
               ),
             ],
           ),
         ),
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          SizedBox(height: 20),
-        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[

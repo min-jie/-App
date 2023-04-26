@@ -26,31 +26,6 @@ class _AccountSettingPageState extends State<AccountSettingPage> {
   int mainAxisCellCount = 4;
   final TextEditingController _searchController = TextEditingController();
 
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      '個人化',
-      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-    ),
-    Text(
-      '亞東訊息',
-      style: optionStyle,
-    ),
-    Text(
-      '首頁',
-      style: optionStyle,
-    ),
-    Text(
-      '住院專區',
-      style: optionStyle,
-    ),
-    Text(
-      '便民服務',
-      style: optionStyle,
-    ),
-  ];
-
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -68,7 +43,7 @@ class _AccountSettingPageState extends State<AccountSettingPage> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(255, 255, 255, 1),
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Color.fromRGBO(56, 129, 47, 1)),
+        iconTheme: IconThemeData(color: Color.fromRGBO(255, 255, 255, 1)),
         backgroundColor: Color.fromRGBO(172, 222, 166, 1),
         title: RichText(
           textAlign: TextAlign.center,
