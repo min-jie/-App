@@ -32,6 +32,8 @@ class _RemindPageState extends State<RemindPage> {
   bool Surgery_Reminded = false; // 手術提醒
   bool Arrange_Reminded = false; // 排檢提醒
   bool DrawBlood_Reminded = false; // 抽血提醒
+  bool MedInform_Reminded = false; // 衛教提醒
+  bool MedUse_Reminded = false; // 用藥提醒
 
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
@@ -71,7 +73,7 @@ class _RemindPageState extends State<RemindPage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.all(20.0),
+                padding: const EdgeInsets.all(15.0),
               ),
               CheckboxListTile(
                 title: const Text(
@@ -235,6 +237,54 @@ class _RemindPageState extends State<RemindPage> {
                 onChanged: (bool? value) {
                   setState(() {
                     DrawBlood_Reminded = value!;
+                  });
+                },
+              ),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+              ),
+              CheckboxListTile(
+                title: const Text(
+                  '衛教提醒',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromRGBO(88, 103, 86, 1)),
+                ),
+                activeColor: Color.fromRGBO(240, 190, 115, 1),
+                checkColor: Color.fromRGBO(255, 255, 255, 1), // 打勾的色
+                tileColor: Color.fromARGB(255, 255, 255, 255),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                value: MedInform_Reminded,
+                onChanged: (bool? value) {
+                  setState(() {
+                    MedInform_Reminded = value!;
+                  });
+                },
+              ),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+              ),
+              CheckboxListTile(
+                title: const Text(
+                  '用藥提醒',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromRGBO(88, 103, 86, 1)),
+                ),
+                activeColor: Color.fromRGBO(240, 190, 115, 1),
+                checkColor: Color.fromRGBO(255, 255, 255, 1), // 打勾的色
+                tileColor: Color.fromARGB(255, 255, 255, 255),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                value: MedUse_Reminded,
+                onChanged: (bool? value) {
+                  setState(() {
+                    MedUse_Reminded = value!;
                   });
                 },
               ),
