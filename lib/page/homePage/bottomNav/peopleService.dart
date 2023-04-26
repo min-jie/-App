@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/my_flutter_app_icons.dart';
 import 'package:flutter_application/page/homePage/bottomNav/home_index.dart';
+import 'package:flutter_application/page/homePage/bottomNav/peopleServiceItem/apply.dart';
 import 'package:flutter_application/page/homePage/bottomNav/personal.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -122,13 +123,13 @@ class _PeopleServicePageState extends State<PeopleServicePage> {
                   ],
                 ),
                 onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //       builder: (context) => const RecordCkeckPage(
-                  //             title: '',
-                  //           )),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ItemApplyPage(
+                              title: '',
+                            )),
+                  );
                 },
               ),
               Padding(
