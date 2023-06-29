@@ -123,7 +123,7 @@ class _MessagePageState extends State<MessagePage> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20.0),
                   ),
-                ),
+                ),//
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [

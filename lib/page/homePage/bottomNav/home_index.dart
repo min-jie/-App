@@ -357,7 +357,6 @@ class HomeContent extends StatelessWidget {
       mainAxisSpacing: 10,
       crossAxisCount: 2,
       children: <Widget>[
-        // 網路掛號 / 預約
         ElevatedButton.icon(
           icon: Icon(
             Icons.app_registration,
